@@ -1,0 +1,55 @@
+﻿  GameScene.cpp
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(5,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(5,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(14,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(39,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(40,20): warning C4244: 'argument': conversion from 'double' to 'unsigned long', possible loss of data
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(42,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(56,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(89,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(123,88): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(123,71): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(123,106): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(131,160): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(131,143): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(3580,56): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(130): message : see reference to function template instantiation 'std::unique_ptr<GameMap,std::default_delete<GameMap>> std::make_unique<GameMap,T&,T&,0>(T &,T &)' being compiled
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitRep\game\game\GameScene.cpp(200): warning C4715: 'GameScene::run': not all control paths return a value
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/PROFILE' specification
+Button.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:REF' specification
+  game.vcxproj -> C:\Users\Danko\Desktop\GitRep\game\Debug\game.exe
