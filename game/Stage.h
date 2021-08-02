@@ -6,11 +6,11 @@ class Stage
 
 	std::vector<int> monsterQuantity;
 	std::vector<int> monsterAlreadyRespawned;
-	double lastRespTime;
-	float respTime;
+	double stageTime;
 	int monstersToKill;
 	int monstersKilled;
 	int monsterRespawned;
+	float respTime;
 
 public:
 	Stage(std::vector<int> mMonsterQuantity, float mRespTime);
@@ -19,5 +19,6 @@ public:
 	bool canMonsterSpawn(float mGameSpeed);
 	bool isStageCompleted();
 	void addMonsterKilled();
+	void render(double mDeltaTime);
 };
 

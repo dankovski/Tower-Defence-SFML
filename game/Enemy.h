@@ -20,7 +20,9 @@ public:
 	void render(double mDeltaTime);
 	bool isAttacking();
 	int getHp();
+	void getDamage(int mDamage);
 	sf::FloatRect getGlobalBounds();
+	sf::Vector2f getPosition();
 
 };
 

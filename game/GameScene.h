@@ -9,6 +9,8 @@
 #include "Enemy.h"
 #include "Tower.h"
 #include "Stage.h"
+#include "RocketTower.h"
+#include <chrono>
 
 class GameScene :public Scene
 {
@@ -25,8 +27,9 @@ private:
 	void render(sf::RenderWindow& mWindow, double mDeltaTime);
 	void draw(sf::RenderWindow& mWindow);
 	std::vector<std::shared_ptr<Enemy>> enemies;
-	std::vector<Tower> towers;
+	std::vector<std::shared_ptr<Tower>> towers;
 	std::vector<std::unique_ptr<sf::Texture>> turretsTexturesVector;
+	std::vector<std::unique_ptr<sf::Texture>> bulletsTexturesVector;
 	std::vector<Stage> stages;
 	bool stageStarted;
 	std::vector<Button> buttons;

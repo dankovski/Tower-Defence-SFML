@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>TurretHUD.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'TurretHUD::goldValue' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>TurretHUD::{ctor}</FUNCTION>
+    <DECORATED>??0TurretHUD@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TurretHUD::goldValue</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>TurretHUD.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'TurretHUD::turretRange' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>TurretHUD::{ctor}</FUNCTION>
+    <DECORATED>??0TurretHUD@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TurretHUD::turretRange</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>TurretHUD.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'TurretHUD::isClicked' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>TurretHUD::{ctor}</FUNCTION>
+    <DECORATED>??0TurretHUD@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TurretHUD::isClicked</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>TurretHUD.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'TurretHUD::isAvailable' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>TurretHUD::{ctor}</FUNCTION>
+    <DECORATED>??0TurretHUD@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TurretHUD::isAvailable</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

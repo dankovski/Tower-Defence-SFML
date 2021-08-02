@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>GameScene.cpp</FILENAME>
+      <LINE>229</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'sf::PrimitiveType' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@$$QAV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>GameHUD.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameHUD::isTurretClicked' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameHUD::{ctor}</FUNCTION>
+    <DECORATED>??0GameHUD@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>GameHUD::isTurretClicked</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>GameHUD.cpp</FILENAME>
+      <LINE>111</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'sf::PrimitiveType' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@$$QAV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>HighscoreScene.cpp</FILENAME>
+      <LINE>160</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'sf::PrimitiveType' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>SettingsScene.cpp</FILENAME>
+      <LINE>292</LINE>
+      <COLUMN>76</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>SettingsScene::run</FUNCTION>
+    <DECORATED>?run@SettingsScene@@UAEHAAVRenderWindow@sf@@@Z</DECORATED>
+    <FUNCLINE>210</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>SettingsScene.cpp</FILENAME>
+      <LINE>292</LINE>
+      <COLUMN>148</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>SettingsScene::run</FUNCTION>
+    <DECORATED>?run@SettingsScene@@UAEHAAVRenderWindow@sf@@@Z</DECORATED>
+    <FUNCLINE>210</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>SettingsScene.cpp</FILENAME>
+      <LINE>293</LINE>
+      <COLUMN>58</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>SettingsScene::run</FUNCTION>
+    <DECORATED>?run@SettingsScene@@UAEHAAVRenderWindow@sf@@@Z</DECORATED>
+    <FUNCLINE>210</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>SettingsScene.cpp</FILENAME>
+      <LINE>293</LINE>
+      <COLUMN>145</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>SettingsScene::run</FUNCTION>
+    <DECORATED>?run@SettingsScene@@UAEHAAVRenderWindow@sf@@@Z</DECORATED>
+    <FUNCLINE>210</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>SettingsScene.cpp</FILENAME>
+      <LINE>405</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'sf::PrimitiveType' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@$$QAV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>Settings.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Settings::limitFPS' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Settings::{ctor}</FUNCTION>
+    <DECORATED>??0Settings@@QAE@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Settings::limitFPS</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>Tower.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Tower::level' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Tower::{ctor}</FUNCTION>
+    <DECORATED>??0Tower@@QAE@PAVTexture@sf@@V?$Vector2@M@2@HHH@Z</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Tower::level</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>TurretHUD.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'TurretHUD::goldValue' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>TurretHUD::{ctor}</FUNCTION>
+    <DECORATED>??0TurretHUD@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>TurretHUD::goldValue</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

@@ -56,14 +56,22 @@ int Enemy::getHp()
 	return hp;
 }
 
+void Enemy::getDamage(int mDamage)
+{
+	hp = hp - mDamage;
+	std::cout << "dmg:" << mDamage << std::endl;
+	std::cout << "hp:" << hp << std::endl;
+}
+
 sf::FloatRect Enemy::getGlobalBounds()
 {
 	return sprite.getGlobalBounds();
 }
 
-
-
-
+sf::Vector2f Enemy::getPosition()
+{
+	return sprite.getPosition();
+}
 
 
 void Enemy::draw(sf::RenderWindow& mWindow) {

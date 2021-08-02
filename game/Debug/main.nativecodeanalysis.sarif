@@ -1,0 +1,846 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.28.29913.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX86\\x86\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x0088B1C0 -il C:\\Users\\Danko\\AppData\\Local\\Temp\\_CL_8e8f49deast -typedil -f main.cpp -Ze -D_MSC_EXTENSIONS -Zp8 -Gs -pc \\:/ -D_MSC_VER=1928 -D_MSC_FULL_VER=192829913 -D_MSC_BUILD=0 -D_WIN32 -D_M_IX86=600 -D_M_IX86_FP=2 -GR -D_CPPRTTI -I C:\\Users\\Danko\\Desktop\\Tower Defence SFML\\game\\game\\sfml\\include -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -DWIN32 -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive -Zc:wchar_t -Zc:forScope -FoDebug\\main.obj -FdDebug\\vc142.pdb -Gd -analyze:projectdirectory C:\\Users\\Danko\\Desktop\\Tower Defence SFML\\game\\game -analyze:rulesetdirectory ;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Danko/Desktop/Tower Defence SFML/game/game/TurretHUD.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "bc3b5faf930496656a973fa1f67c8c53"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/turrethud.h"
+          },
+          "hashes": {
+            "md5": "b72caa8cea34fc5e7eedf404f5791136"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics.hpp"
+          },
+          "hashes": {
+            "md5": "17d7310e55ae3295ccf5cdfffc8a385b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window.hpp"
+          },
+          "hashes": {
+            "md5": "39658023f06cc4b77fae46b5331d02a8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system.hpp"
+          },
+          "hashes": {
+            "md5": "2f5a3a0bca4ab9ad7987c6d3150df786"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/config.hpp"
+          },
+          "hashes": {
+            "md5": "6e884b388c17e857f03cf560f43f8e3d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/clock.hpp"
+          },
+          "hashes": {
+            "md5": "cdb837962d36cca318d33481a5847609"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/export.hpp"
+          },
+          "hashes": {
+            "md5": "5e9f637e8d5f268f1e7f947247e9ea49"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/time.hpp"
+          },
+          "hashes": {
+            "md5": "04d70772216081f659a80ca8235e41c8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/err.hpp"
+          },
+          "hashes": {
+            "md5": "ac7e40f126401382b4e9c0d7a35e2dee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/fileinputstream.hpp"
+          },
+          "hashes": {
+            "md5": "554c4e1cf171b4688cb8e2b540ed41d1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/inputstream.hpp"
+          },
+          "hashes": {
+            "md5": "79c076520c466d63f4da8340199ac12e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/noncopyable.hpp"
+          },
+          "hashes": {
+            "md5": "e9ea773f131658725b9b0b1997e72354"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/lock.hpp"
+          },
+          "hashes": {
+            "md5": "fc160652c4e8b166db33681ea3bca1cb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/memoryinputstream.hpp"
+          },
+          "hashes": {
+            "md5": "755650de6a98ba314b9a899dc7730f85"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/mutex.hpp"
+          },
+          "hashes": {
+            "md5": "af0ba0b2f4bb5e74ebb2dec01a4714a8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/sleep.hpp"
+          },
+          "hashes": {
+            "md5": "c6b224d2a45cb25198d04ff4a07ecd59"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/string.hpp"
+          },
+          "hashes": {
+            "md5": "7cd09df620dcd7a413a6ac948ea79a20"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/utf.hpp"
+          },
+          "hashes": {
+            "md5": "b5639acc6da4dbd81b477d2a12255cc6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/utf.inl"
+          },
+          "hashes": {
+            "md5": "093ce39336d8faa3d61b05fa072b8e9a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/string.inl"
+          },
+          "hashes": {
+            "md5": "a2e03673581afa96ba9e8b4567ae8a44"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/thread.hpp"
+          },
+          "hashes": {
+            "md5": "fa9c9c45291b60c528b752a9d8e69b0c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/thread.inl"
+          },
+          "hashes": {
+            "md5": "ecb5ee864a0765ce9588de23ae56d84f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/threadlocal.hpp"
+          },
+          "hashes": {
+            "md5": "6238639dc2a90ae166d084d955aadd3c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/threadlocalptr.hpp"
+          },
+          "hashes": {
+            "md5": "65596a8aa1870ab7858e8dc59b92991b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/threadlocalptr.inl"
+          },
+          "hashes": {
+            "md5": "b5c6ab7e79998f27a748a54ec7e422a4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/vector2.hpp"
+          },
+          "hashes": {
+            "md5": "572fdde614da9df26ba757ab844eba5c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/vector2.inl"
+          },
+          "hashes": {
+            "md5": "a77bbd70c4aba1929d9c24ebb2162e01"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/vector3.hpp"
+          },
+          "hashes": {
+            "md5": "0c550563a23b455169b32fd5c34d539b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/system/vector3.inl"
+          },
+          "hashes": {
+            "md5": "7420a7e535233bb8f73ce759e7d1dda5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/context.hpp"
+          },
+          "hashes": {
+            "md5": "134860328e6532792a911f5acf6737bd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/export.hpp"
+          },
+          "hashes": {
+            "md5": "08c9ab1b1c0a42227ec18aca4749de51"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/glresource.hpp"
+          },
+          "hashes": {
+            "md5": "17c90b420528c6ac8632fbfc9c412338"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/contextsettings.hpp"
+          },
+          "hashes": {
+            "md5": "38ef35597490ff31e3a6dc5f28e7be27"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/event.hpp"
+          },
+          "hashes": {
+            "md5": "7a0b97c8864cced7284dca2a19096a38"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/joystick.hpp"
+          },
+          "hashes": {
+            "md5": "01613857d8299cecaacef28bab1c9dfe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/keyboard.hpp"
+          },
+          "hashes": {
+            "md5": "851db438d222e79b8e0ec2953a1bfb11"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/mouse.hpp"
+          },
+          "hashes": {
+            "md5": "5f1c5e5bd55c717412b032a8f55c39bc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/sensor.hpp"
+          },
+          "hashes": {
+            "md5": "ec62dcdce58d1068b8f8d5cc110e83b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/touch.hpp"
+          },
+          "hashes": {
+            "md5": "4bd189365301eb3b53e7a4221c7f8855"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/videomode.hpp"
+          },
+          "hashes": {
+            "md5": "6924e88f5ba164bd90e11dc05a101293"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/window.hpp"
+          },
+          "hashes": {
+            "md5": "34b850d395fde8c06955b6773747b1ac"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/windowhandle.hpp"
+          },
+          "hashes": {
+            "md5": "10d20f5a3e3ef0f01c2143af457685b7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/window/windowstyle.hpp"
+          },
+          "hashes": {
+            "md5": "05ed51b909796ef1e60af09d06517fc4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/blendmode.hpp"
+          },
+          "hashes": {
+            "md5": "f564a2f32726e65d368b0671756fb25a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/export.hpp"
+          },
+          "hashes": {
+            "md5": "a425b015883711cd40f7b6bffbd6050e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/circleshape.hpp"
+          },
+          "hashes": {
+            "md5": "6c47e939e3b9dc97345bf72f38f932d1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/shape.hpp"
+          },
+          "hashes": {
+            "md5": "a8c7405c1e4631c91045792baffa778b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/drawable.hpp"
+          },
+          "hashes": {
+            "md5": "04f4ae20c61a7f575d5f4e7d6bd227a9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/renderstates.hpp"
+          },
+          "hashes": {
+            "md5": "de79711e2dc088d7593b6179f64314fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/transform.hpp"
+          },
+          "hashes": {
+            "md5": "c222ae1b9d106955208b0a6dfa0a088b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/rect.hpp"
+          },
+          "hashes": {
+            "md5": "110d8158cf1755e7bdfd656ac61d9fc7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/rect.inl"
+          },
+          "hashes": {
+            "md5": "879d03c5895a5602adddb9cb42ab560a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/transformable.hpp"
+          },
+          "hashes": {
+            "md5": "451d95526ef26471caca0038f307fa73"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/vertexarray.hpp"
+          },
+          "hashes": {
+            "md5": "e45a0caee358cdabf13b8d59702ce53d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/vertex.hpp"
+          },
+          "hashes": {
+            "md5": "584b713575d4e04a895fdda1f18b6c42"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/color.hpp"
+          },
+          "hashes": {
+            "md5": "6cb4e076fd01dbb6b75cdbf2a8a4b088"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/primitivetype.hpp"
+          },
+          "hashes": {
+            "md5": "fb5080fa177164444ef5d3d051ea044c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/convexshape.hpp"
+          },
+          "hashes": {
+            "md5": "a624de7721c4582de9f496362081782e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/font.hpp"
+          },
+          "hashes": {
+            "md5": "e4b4dff3c0a21046353043d1f7754965"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/glyph.hpp"
+          },
+          "hashes": {
+            "md5": "7a026d583b065b734ae1b0997ccb76c8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/texture.hpp"
+          },
+          "hashes": {
+            "md5": "589fe3cca1a05d51796b660c8a19f6a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/image.hpp"
+          },
+          "hashes": {
+            "md5": "47af7f39ceab1320cfdeadc71f84be11"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/rectangleshape.hpp"
+          },
+          "hashes": {
+            "md5": "b5f6a57060b57ef2b841334fb72de7e8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/rendertarget.hpp"
+          },
+          "hashes": {
+            "md5": "24a32bd3c0697d852e4b701053a7c1e9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/view.hpp"
+          },
+          "hashes": {
+            "md5": "01a86d77dac610922b901f4c1d40a8e1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/rendertexture.hpp"
+          },
+          "hashes": {
+            "md5": "42824184ae1fac4d3fcec30105471cb9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/renderwindow.hpp"
+          },
+          "hashes": {
+            "md5": "45ccfe361fa6eba7584169af4b32f584"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/shader.hpp"
+          },
+          "hashes": {
+            "md5": "fb012aeb49d6747dc9b83d2cc7e32ec0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/glsl.hpp"
+          },
+          "hashes": {
+            "md5": "d72f7a5c2019bee1322b0b2b78c99e72"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/glsl.inl"
+          },
+          "hashes": {
+            "md5": "9cc1f0268ff69e93eff5c107b95d5da4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/sprite.hpp"
+          },
+          "hashes": {
+            "md5": "2cfdcc4553512d0a8b1b418522b2b9dd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/sfml/include/sfml/graphics/text.hpp"
+          },
+          "hashes": {
+            "md5": "408fdfa1e96cb87f03647b15244304aa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Danko/Desktop/Tower Defence SFML/game/game/Tower.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "dc8b803b320197136778192f4d62fca9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/tower.h"
+          },
+          "hashes": {
+            "md5": "ec167ee390ed0e2ccdececb2d2a1e82b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/enemy.h"
+          },
+          "hashes": {
+            "md5": "cb351d84ceb9f6fcea81dc80b448262d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/tile.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "c5fef87fc53e49ab2e0c1d5b2ba410c7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/tile.h"
+          },
+          "hashes": {
+            "md5": "32a502d986c11647eb291c78f533653e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/stage.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "fb21feae332304a2ff5d1aff612b7bfe"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/stage.h"
+          },
+          "hashes": {
+            "md5": "27ac1959b14c0af33bc03795a98ff135"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Danko/Desktop/Tower Defence SFML/game/game/Settings.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "51c9109edbddf87178ecb273006e0f76"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/settings.h"
+          },
+          "hashes": {
+            "md5": "ba2a85637c6a29bf55a1a8cc0ef88304"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Danko/Desktop/Tower Defence SFML/game/game/SettingsScene.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "8c80fa94dd1a24bd1dbf17a30539fd85"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/settingsscene.h"
+          },
+          "hashes": {
+            "md5": "b7f874f6366a229f6109fcf66c654a41"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/scene.h"
+          },
+          "hashes": {
+            "md5": "3224071c368b394cee00671f1d90948a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/button.h"
+          },
+          "hashes": {
+            "md5": "4749861feeb094ddb3a186a5a7462027"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/player.h"
+          },
+          "hashes": {
+            "md5": "15b99835342aea6fda82ed8d8c096b44"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/rockettower.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "291543e5d84bb80120bbcc03c2ed076c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/rockettower.h"
+          },
+          "hashes": {
+            "md5": "4dc00f4b8d0a6644aa0e495a6db98fd4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/player.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "2ab76aedd0d42e7a1a391b11fe8b845b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/menuscene.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "bcded7a5bb3f5b7f55c723fa00de3015"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/menuscene.h"
+          },
+          "hashes": {
+            "md5": "9a64e401f55b28cc1eea126b26d90386"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/gamemap.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "d2e4a8b4f3849398200d1cbde58b715a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/gamemap.h"
+          },
+          "hashes": {
+            "md5": "bda9a8cf21d43bbf06259d235effcbb3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/main.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "md5": "49386c23c0358271e7105f3ba714f2f4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/highscorescene.h"
+          },
+          "hashes": {
+            "md5": "a0d61439f528262b8fbe490fd456ddea"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/gamescene.h"
+          },
+          "hashes": {
+            "md5": "bcf9b8c351a1fafbd608cc599c637f1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/danko/desktop/tower defence sfml/game/game/gamehud.h"
+          },
+          "hashes": {
+            "md5": "46266db467f2820225f674f0b347d95d"
+          }
+        }
+      ]
+    }
+  ]
+}

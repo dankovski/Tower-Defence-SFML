@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>GameHUD.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameHUD::isTurretClicked' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameHUD::{ctor}</FUNCTION>
+    <DECORATED>??0GameHUD@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>GameHUD::isTurretClicked</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>GameHUD.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameHUD::clickedTurretNumber' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameHUD::{ctor}</FUNCTION>
+    <DECORATED>??0GameHUD@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>GameHUD::clickedTurretNumber</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>GameHUD.cpp</FILENAME>
+      <LINE>111</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'sf::PrimitiveType' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>sf::VertexArray::{ctor}</FUNCTION>
+    <DECORATED>??0VertexArray@sf@@QAE@$$QAV01@@Z</DECORATED>
+    <FUNCLINE>192</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

@@ -1,23 +1,31 @@
-c:\users\danko\desktop\gitrep\game\game\debug\vc142.pdb
-c:\users\danko\desktop\gitrep\game\game\debug\vc142.idb
-c:\users\danko\desktop\gitrep\game\game\debug\tile.obj
-c:\users\danko\desktop\gitrep\game\game\debug\settings.obj
-c:\users\danko\desktop\gitrep\game\game\debug\scenesettings.obj
-c:\users\danko\desktop\gitrep\game\game\debug\player.obj
-c:\users\danko\desktop\gitrep\game\game\debug\menu.obj
-c:\users\danko\desktop\gitrep\game\game\debug\gamemap.obj
-c:\users\danko\desktop\gitrep\game\game\debug\main.obj
-c:\users\danko\desktop\gitrep\game\game\debug\highscore.obj
-c:\users\danko\desktop\gitrep\game\game\debug\gamehud.obj
-c:\users\danko\desktop\gitrep\game\game\debug\button.obj
-c:\users\danko\desktop\gitrep\game\game\debug\game.obj
-c:\users\danko\desktop\gitrep\game\debug\game.exe
-c:\users\danko\desktop\gitrep\game\debug\game.ilk
-c:\users\danko\desktop\gitrep\game\debug\game.pdb
-c:\users\danko\desktop\gitrep\game\game\debug\map.obj
-c:\users\danko\desktop\gitrep\game\game\debug\game.tlog\cl.command.1.tlog
-c:\users\danko\desktop\gitrep\game\game\debug\game.tlog\cl.read.1.tlog
-c:\users\danko\desktop\gitrep\game\game\debug\game.tlog\cl.write.1.tlog
-c:\users\danko\desktop\gitrep\game\game\debug\game.tlog\link.command.1.tlog
-c:\users\danko\desktop\gitrep\game\game\debug\game.tlog\link.read.1.tlog
-c:\users\danko\desktop\gitrep\game\game\debug\game.tlog\link.write.1.tlog
+c:\users\danko\desktop\tower defence sfml\game\game\debug\vc142.pdb
+c:\users\danko\desktop\tower defence sfml\game\game\debug\vc142.idb
+c:\users\danko\desktop\tower defence sfml\game\game\debug\turrethud.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\tower.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\tile.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\stage.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\settings.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\settingsscene.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\player.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\menuscene.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\gamemap.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\main.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\highscorescene.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\gamehud.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\gamescene.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\enemy.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\button.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\rockettower.obj
+c:\users\danko\desktop\tower defence sfml\game\debug\game.exe
+c:\users\danko\desktop\tower defence sfml\game\debug\game.pdb
+c:\users\danko\desktop\tower defence sfml\game\game\debug\game.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\highscore.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\map.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\menu.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\scenesettings.obj
+c:\users\danko\desktop\tower defence sfml\game\game\debug\game.tlog\cl.command.1.tlog
+c:\users\danko\desktop\tower defence sfml\game\game\debug\game.tlog\cl.read.1.tlog
+c:\users\danko\desktop\tower defence sfml\game\game\debug\game.tlog\cl.write.1.tlog
+c:\users\danko\desktop\tower defence sfml\game\game\debug\game.tlog\link.command.1.tlog
+c:\users\danko\desktop\tower defence sfml\game\game\debug\game.tlog\link.read.1.tlog
+c:\users\danko\desktop\tower defence sfml\game\game\debug\game.tlog\link.write.1.tlog

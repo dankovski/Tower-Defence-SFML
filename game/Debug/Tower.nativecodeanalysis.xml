@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>Tower.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Tower::level' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Tower::{ctor}</FUNCTION>
+    <DECORATED>??0Tower@@QAE@PAVTexture@sf@@V?$Vector2@M@2@HHH@Z</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Tower::level</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>Tower.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Tower::lastAttackTime' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Tower::{ctor}</FUNCTION>
+    <DECORATED>??0Tower@@QAE@PAVTexture@sf@@V?$Vector2@M@2@HHH@Z</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Tower::lastAttackTime</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>Tower.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Tower::canAttack' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Tower::{ctor}</FUNCTION>
+    <DECORATED>??0Tower@@QAE@PAVTexture@sf@@V?$Vector2@M@2@HHH@Z</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Tower::canAttack</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Danko\Desktop\Tower Defence SFML\game\game\</FILEPATH>
+      <FILENAME>Tower.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Tower::shotSpeed' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Tower::{ctor}</FUNCTION>
+    <DECORATED>??0Tower@@QAE@PAVTexture@sf@@V?$Vector2@M@2@HHH@Z</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Tower::shotSpeed</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

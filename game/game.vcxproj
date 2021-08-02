@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RocketTower.cpp" />
     <ClCompile Include="SettingsScene.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -163,6 +165,7 @@
     <ClCompile Include="TurretHUD.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameScene.h" />
@@ -171,6 +174,7 @@
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="RocketTower.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SettingsScene.h" />
     <ClInclude Include="Settings.h" />

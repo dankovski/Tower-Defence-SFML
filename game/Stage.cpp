@@ -18,7 +18,7 @@ Stage::Stage(std::vector<int> mMonsterQuantity, float mRespTime) {
 
 void Stage::startStage()
 {
-	lastRespTime = clock()/1000.0;
+	stageTime = 0;
 }
 
 int Stage::getMonsterId()
@@ -38,13 +38,12 @@ int Stage::getMonsterId()
 
 
 
-
 bool Stage::canMonsterSpawn(float mGameSpeed)
 {
 
-	if (( clock()/1000.0 - lastRespTime >= respTime/mGameSpeed) && monsterRespawned<monstersToKill) {
-		lastRespTime = clock() / 1000.0;
+	if ((stageTime >= respTime/mGameSpeed) && monsterRespawned<monstersToKill) {
 		monsterRespawned++;
+		stageTime -= respTime / mGameSpeed;
 		return true;
 	}
 	else {
@@ -67,6 +66,11 @@ bool Stage::isStageCompleted()
 void Stage::addMonsterKilled()
 {
 	monstersKilled++;
+}
+
+void Stage::render(double mDeltaTime)
+{
+	stageTime += mDeltaTime;
 }
 
 
