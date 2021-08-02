@@ -151,6 +151,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameHUD.cpp" />
+    <ClCompile Include="GravesTower.cpp" />
     <ClCompile Include="HighscoreScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameMap.cpp" />
@@ -160,8 +161,10 @@
     <ClCompile Include="SettingsScene.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="StunTower.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Tower.cpp" />
+    <ClCompile Include="TripleTower.cpp" />
     <ClCompile Include="TurretHUD.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +173,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameHUD.h" />
+    <ClInclude Include="GravesTower.h" />
     <ClInclude Include="HighscoreScene.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="MenuScene.h" />
@@ -179,8 +183,10 @@
     <ClInclude Include="SettingsScene.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="StunTower.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Tower.h" />
+    <ClInclude Include="TripleTower.h" />
     <ClInclude Include="TurretHUD.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

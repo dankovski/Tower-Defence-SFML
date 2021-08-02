@@ -8,11 +8,18 @@ private:
 	sf::Sprite sprite;
 	int damage;
 	int hp;
+	int maxHp;
 	float speed;
 	int reward;
 	std::vector<sf::Vector2f> pathPoints;
 	int pathIndex;
 	sf::Vector2f direction;
+
+	bool isEnemyStunned = false;
+	double timeFromLastStun;
+	double stunTime;
+	sf::RectangleShape hpBar;
+	bool isSlowed = false;
 
 public:
 	Enemy(sf::Texture* mTexture, int mDamage, int mHp, float mSpeed, int mReward, std::vector<sf::Vector2f> mPathPoints);
@@ -20,9 +27,11 @@ public:
 	void render(double mDeltaTime);
 	bool isAttacking();
 	int getHp();
-	void getDamage(int mDamage);
+	void receiveDamage(int mDamage);
 	sf::FloatRect getGlobalBounds();
 	sf::Vector2f getPosition();
+	void startStun(double mStunTime);
+	bool isStunned();
 
 };
 

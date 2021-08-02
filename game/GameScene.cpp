@@ -17,7 +17,23 @@ void GameScene::render(sf::RenderWindow& mWindow, double mDeltaTime) {
 		if (stageStarted) {
 			stages[0].render(mDeltaTime);
 			if (stages[0].canMonsterSpawn(1.0)) {
-				enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 30, 200.0, 30, map->getPathPoints())));
+				switch (stages[0].getMonsterId()) {
+					//todo add monsters textures vector
+				case 0:
+					enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 50, 400.0, 30, map->getPathPoints())));
+					break;
+				case 1:
+					enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 100, 300.0, 30, map->getPathPoints())));
+					break;
+				case 2:
+					enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 150, 200.0, 30, map->getPathPoints())));
+					break;
+				case 3:
+					enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 200, 100.0, 30, map->getPathPoints())));
+					break;
+
+				}
+				
 			}
 			if (stages[0].isStageCompleted()) {
 				stageStarted = false;
@@ -45,7 +61,7 @@ void GameScene::render(sf::RenderWindow& mWindow, double mDeltaTime) {
 		towers[i]->render(mDeltaTime);
 		if (!towers[i]->hasEnemyTarget()) {
 			for (int k = 0; k < enemies.size(); k++) {
-				if (towers[i]->hasEnemyInRange(enemies[k]->getGlobalBounds())) {
+				if (towers[i]->hasEnemyInRange(enemies[k])) {
 					towers[i]->setTargetEnemy(enemies[k]);
 					break;
 				}
@@ -135,9 +151,13 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 
 	//loading turrets textures
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[0]->loadFromFile("images/castle.png");
+	turretsTexturesVector[0]->loadFromFile("images/tower1.png");
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[1]->loadFromFile("images/tower1.png");
+	turretsTexturesVector[1]->loadFromFile("images/tower2.png");
+	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
+	turretsTexturesVector[2]->loadFromFile("images/tower3.png");
+	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
+	turretsTexturesVector[3]->loadFromFile("images/tower4.png");
 
 	//loading bullets textures
 	bulletsTexturesVector.push_back(std::make_unique<sf::Texture>());
@@ -152,8 +172,8 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 
 	//creating stages
 	stages.push_back(Stage(std::vector<int>{3, 4}, 0.5));
-	stages.push_back(Stage(std::vector<int>{5, 8}, 0.5));
-	stages.push_back(Stage(std::vector<int>{15, 18}, 0.5));
+	stages.push_back(Stage(std::vector<int>{5, 8, 3}, 0.5));
+	stages.push_back(Stage(std::vector<int>{15, 18, 5, 1}, 0.5));
 
 
 	while (running) {
@@ -196,8 +216,23 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 
 			//placing selected turret
 			if (canPlaceTurret && gameHUD->isAnyTurretsClicked() && gameHUD->isClickedTurretAvailable() && event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
-				//towers.push_back(Tower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), map->getCenterOfTile(mousePosition), 100, 100, 100));
-				towers.push_back(std::shared_ptr<Tower>(new RocketTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), map->getCenterOfTile(mousePosition), 200, 10, 2.0, bulletsTexturesVector[0].get())));
+
+				switch (gameHUD->getTurretClcikedNumber()) {
+				case 0:
+					towers.push_back(std::shared_ptr<Tower>(new GravesTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					break;
+				case 1:
+					towers.push_back(std::shared_ptr<Tower>(new RocketTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					break;
+				case 2:
+					towers.push_back(std::shared_ptr<Tower>(new StunTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					break;
+				case 3:
+					towers.push_back(std::shared_ptr<Tower>(new TripleTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					break;
+
+				}
+				
 				canPlaceTurret = false;
 				map->setTileType((mousePosition), false);
 				gameHUD->setTurretsUnclicked();
@@ -222,9 +257,6 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 				isAnyTowerSelected = false;
 			}
 
-
-		
-
 		}
 
 
@@ -232,12 +264,18 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 		deltaTime = (std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() / 1000000.0);
 		begin = std::chrono::steady_clock::now();
 
-		//std::cout << "fps:" << 1.0 / deltaTime << std::endl;
+		
 
 
-		if (mWindow.hasFocus() && deltaTime < 100.0) {
+		if (mWindow.hasFocus() && deltaTime <0.1) {
 			render(mWindow, deltaTime);
 		}
+		else {
+			std::cout << "dt:" << deltaTime << std::endl;
+		}
+
+
+
 		
 		mWindow.clear();
 		draw(mWindow);

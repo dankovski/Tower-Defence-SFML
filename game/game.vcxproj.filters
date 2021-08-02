@@ -74,6 +74,15 @@
     <ClCompile Include="Button.cpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClCompile>
+    <ClCompile Include="GravesTower.cpp">
+      <Filter>Game\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="TripleTower.cpp">
+      <Filter>Game\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="StunTower.cpp">
+      <Filter>Game\Towers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -126,6 +135,15 @@
     </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>Game\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="GravesTower.h">
+      <Filter>Game\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="TripleTower.h">
+      <Filter>Game\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="StunTower.h">
+      <Filter>Game\Towers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

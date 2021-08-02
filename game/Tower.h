@@ -2,35 +2,38 @@
 #include "sfml/Graphics.hpp"
 #include "Enemy.h"
 #include <cmath>
+#include "Bullet.h"
 
 class Tower
 {
 protected:
 	sf::Sprite sprite;
 	sf::CircleShape range;
-	
 	int level;
 	bool isTowerSelected;
-	int attackSpeed;
+	float attackSpeed;
 	double timeFromLastAttack;
 	int damage;
 	bool hasTarget;
 	std::shared_ptr<Enemy> targetPointer;
+	std::vector<Bullet> bullets;
+	sf::Texture* bulletTexture;
 
 public:
 	
-	Tower(sf::Texture* mTurretTexture, sf::Vector2f mPosition, int mRange, int mDamage, int mAttackSpeed);
+	Tower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vector2f mPosition, int mRange, int mDamage, float mAttackSpeed);
 	~Tower();
-	virtual void render(double mDeltaTime) {};
-	virtual void draw(sf::RenderWindow& mWindow);
-	virtual void checkBulletsCollision(Enemy* mEnemyPointer) {};
+	void render(double mDeltaTime);
+	void draw(sf::RenderWindow& mWindow);
 	void drawRange(sf::RenderWindow& mWindow);
 	bool hasEnemyTarget();
-	bool hasEnemyInRange(sf::FloatRect mEnemyGlobalBounds);
+	virtual bool hasEnemyInRange(std::shared_ptr<Enemy> mEnemy);
 	void setTargetEnemy(std::shared_ptr<Enemy> mNewTargetEnemy);
 	bool isColliding(sf::Vector2f mMousePosition);
 	bool isSelected();
 	void setTowerSelected(bool mIsSelected);
-	virtual void attack() {};
+	virtual void attack();
+	virtual void checkBulletsCollision(Enemy* mEnemyPointer);
+
 };
 

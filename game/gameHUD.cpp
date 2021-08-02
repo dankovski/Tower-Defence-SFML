@@ -25,14 +25,19 @@ GameHUD::GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vecto
 
 
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[0]->loadFromFile("images/castle.png");
+	turretsTexturesVector[0]->loadFromFile("images/tower1.png");
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[1]->loadFromFile("images/tower1.png");
+	turretsTexturesVector[1]->loadFromFile("images/tower2.png");
+	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
+	turretsTexturesVector[2]->loadFromFile("images/tower3.png");
+	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
+	turretsTexturesVector[3]->loadFromFile("images/tower4.png");
 
 
-	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[0].get(), coinTexture.get(),  sf::Vector2f(mPosition.x+mBackgroundSize.x/3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 80, 100));
-	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[1].get(), coinTexture.get(), sf::Vector2f(mPosition.x+mBackgroundSize.x*2/3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 120, 80));
-
+	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[0].get(), coinTexture.get(),  sf::Vector2f(mPosition.x+mBackgroundSize.x / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 80, 200));
+	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[1].get(), coinTexture.get(), sf::Vector2f(mPosition.x+mBackgroundSize.x * 2 / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 120, 300));
+	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[2].get(), coinTexture.get(), sf::Vector2f(mPosition.x + mBackgroundSize.x / 3, mPosition.y + mBackgroundSize.y *2/ 6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 100, 200));
+	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[3].get(), coinTexture.get(), sf::Vector2f(mPosition.x + mBackgroundSize.x * 2 / 3, mPosition.y + mBackgroundSize.y*2 / 6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 50, 300));
 
 
 }
@@ -44,7 +49,7 @@ void GameHUD::draw(sf::RenderWindow& window) {
 	int clicked = -1;
 
 
-	for (int i = 0; i < turretsTexturesVector.size(); i++) {
+	for (int i = 0; i < turretsVector.size(); i++) {
 		if (!turretsVector[i].isTurretClicked()) {
 			turretsVector[i].draw(window);
 		}
@@ -62,7 +67,7 @@ void GameHUD::draw(sf::RenderWindow& window) {
 }
 
 void GameHUD::render(int mPlayerGold, sf::Vector2f mMousePosition, bool mIsAvailable) {
-	for (int i = 0; i < turretsTexturesVector.size(); i++) {
+	for (int i = 0; i < turretsVector.size(); i++) {
 		turretsVector[i].render(mPlayerGold, mMousePosition, mIsAvailable);
 	}
 }
@@ -108,3 +113,4 @@ int GameHUD::getTurretClcikedNumber() {
 bool GameHUD::isClickedTurretAvailable() {
 	return turretsVector[clickedTurretNumber].isTurretAvailable();
 }
+

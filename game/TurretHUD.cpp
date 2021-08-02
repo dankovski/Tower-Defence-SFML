@@ -12,18 +12,13 @@ TurretHUD::TurretHUD(sf::Font* mFont, sf::Texture* mTurretTexture, sf::Texture* 
 	isClicked = false;
 	goldValue = mGoldValue; 
 	turretSprite.setTexture(*mTurretTexture);
-	//turretSprite.setPosition(mPosition);
 	turretSprite.setScale(mTurretSize.x / (float)(*mTurretTexture).getSize().x, (float)mTurretSize.y / (*mTurretTexture).getSize().y);
-	//turretSprite.setOrigin(turretSprite.getGlobalBounds().width / 2, turretSprite.getGlobalBounds().height / 2);
 	turretSprite.setOrigin((turretSprite.getGlobalBounds().left + turretSprite.getGlobalBounds().width) / 2, mTurretSize.y / 2);
-	//turretSprite.setColor(sf::Color::Red);
 
 	backgroundRectangle.setSize(sf::Vector2f(mTurretSize.x, mTurretSize.y * 1.5));
 	backgroundRectangle.setFillColor(sf::Color::Red);
 	backgroundRectangle.setOrigin(0, 0);
-	//backgroundRectangle.setPosition(sf::Vector2f(turretSprite.getGlobalBounds().left, turretSprite.getGlobalBounds().top));
 	
-
 	goldText.setFont(*mFont);
 	goldText.setString(std::to_string(goldValue));
 	goldText.setFillColor(sf::Color::Yellow);
@@ -31,23 +26,16 @@ TurretHUD::TurretHUD(sf::Font* mFont, sf::Texture* mTurretTexture, sf::Texture* 
 	goldText.setOutlineThickness(3);
 	goldText.setOutlineColor(sf::Color::Black);
 	goldText.setOrigin(goldText.getGlobalBounds().width / 2, goldText.getGlobalBounds().height / 2);
-	//goldText.setPosition(sf::Vector2f(turretSprite.getGlobalBounds().left+ turretSprite.getGlobalBounds().width*0.65, turretSprite.getGlobalBounds().top + turretSprite.getGlobalBounds().height + goldText.getGlobalBounds().height/2));
-	
+
 	coinSprite.setTexture(*mCoinTexture);
 	coinSprite.setOrigin(coinSprite.getGlobalBounds().width / 2, coinSprite.getGlobalBounds().height / 2);
-	//coinSprite.setPosition(sf::Vector2f(turretSprite.getGlobalBounds().left + turretSprite.getGlobalBounds().width * 0.1, goldText.getGlobalBounds().top+ goldText.getGlobalBounds().height/2));
-	//coinSprite.setPosition(sf::Vector2f(turretSprite.getGlobalBounds().left, turretSprite.getGlobalBounds().top + turretSprite.getGlobalBounds().height));
-	//coinSprite.setScale(0.25 * mTurretSize.x / (float)(*mCoinTexture).getSize().x, 0.25 * (float)mTurretSize.y / (*mCoinTexture).getSize().y);
 	coinSprite.setScale(goldText.getGlobalBounds().height / (float)(*mCoinTexture).getSize().x, goldText.getGlobalBounds().height / (*mCoinTexture).getSize().y);
 
-	//turretRangeCircle.setRadius(mTurretSize.x*turretRange);
-	//turretRangeCircle.setOutlineThickness(10);
-	turretRangeCircle.setRadius(300);
+	turretRangeCircle.setRadius(mTurretRange);
 	turretRangeCircle.setOutlineThickness(5);
 	turretRangeCircle.setFillColor(sf::Color::Transparent);
 	turretRangeCircle.setOutlineColor(sf::Color::Cyan);
 	turretRangeCircle.setOrigin(turretRangeCircle.getGlobalBounds().width / 2, turretRangeCircle.getGlobalBounds().height / 2);
-
 
 	initPosition = mPosition;
 	this->setPosition(mPosition);

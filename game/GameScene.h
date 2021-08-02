@@ -10,6 +10,9 @@
 #include "Tower.h"
 #include "Stage.h"
 #include "RocketTower.h"
+#include "GravesTower.h"
+#include "TripleTower.h"
+#include "StunTower.h"
 #include <chrono>
 
 class GameScene :public Scene
