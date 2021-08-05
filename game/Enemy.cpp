@@ -3,7 +3,7 @@
 Enemy::Enemy(sf::Texture* mTexture, int mDamage, int mHp, float mSpeed, int mReward, std::vector<sf::Vector2f> mPathPoints, int mTextureFrames, float mAnimationDuration) {
 	spritePointer = std::make_unique<sf::Sprite>();
 	spritePointer->setTexture(*mTexture);
-	walkAnimation = Animator(spritePointer.get(), mTextureFrames, mAnimationDuration);
+	walkAnimation = Animator(spritePointer.get(), mTextureFrames, mAnimationDuration, true);
 
 	spritePointer->setOrigin(sf::Vector2f(spritePointer->getGlobalBounds().width / 2, spritePointer->getGlobalBounds().height / 2));
 	spritePointer->setPosition(mPathPoints[0]);

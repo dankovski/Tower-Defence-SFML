@@ -5,7 +5,7 @@ class Animator
 {
 public:
 	Animator() {};
-	Animator(sf::Sprite* mTargetSprite, int mNumberOfFrames, float mDuration);
+	Animator(sf::Sprite* mTargetSprite, int mNumberOfFrames, float mDuration, bool mIsLooped);
 	void update(double mDeltaTime);
 	void startAnimation();
 

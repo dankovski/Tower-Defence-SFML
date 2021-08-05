@@ -1,25 +1,4 @@
-﻿  Enemy.cpp
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(31,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(57,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(57,65): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(61,95): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(61,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+﻿  Animator.cpp
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/PROFILE' specification
 Animator.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:REF' specification
   game.vcxproj -> C:\Users\Danko\Desktop\Tower Defence SFML\game\Debug\game.exe

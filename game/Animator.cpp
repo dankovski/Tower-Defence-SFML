@@ -1,6 +1,6 @@
 #include "Animator.h"
 
-Animator::Animator(sf::Sprite* mTargetSprite, int mNumberOfFrames, float mDuration)
+Animator::Animator(sf::Sprite* mTargetSprite, int mNumberOfFrames, float mDuration, bool mIsLooped)
 {
 	targetSprite = mTargetSprite;
 	startFrame = 0;
@@ -10,8 +10,8 @@ Animator::Animator(sf::Sprite* mTargetSprite, int mNumberOfFrames, float mDurati
 	currentFrame = 0;
 	textureSize = mTargetSprite->getTexture()->getSize();
 	targetSprite->setTextureRect(sf::IntRect(0, 0, textureSize.x/(endFrame+1), textureSize.y));
-	isStarted = true;
-	isLooped = false;
+	isStarted = mIsLooped;
+	isLooped = mIsLooped;
 }
 
 void Animator::update(double mDeltaTime)
@@ -19,8 +19,6 @@ void Animator::update(double mDeltaTime)
 	if (isStarted) {
 
 		timeFromStart += mDeltaTime;
-		if (currentFrame == endFrame) {
-		}
 
 		if (timeFromStart >= (currentFrame + 1) * duration / (endFrame + 1 - startFrame)) {
 			currentFrame++;
@@ -29,7 +27,7 @@ void Animator::update(double mDeltaTime)
 				currentFrame = 0;
 				timeFromStart = 0.0;
 				targetSprite->setTextureRect(sf::IntRect(0, 0, textureSize.x / (endFrame + 1), textureSize.y));
-				if (isLooped) {
+				if (!isLooped) {
 					isStarted = false;
 				}
 
@@ -41,10 +39,6 @@ void Animator::update(double mDeltaTime)
 
 
 	}
-
-
-
-
 
 }
 
