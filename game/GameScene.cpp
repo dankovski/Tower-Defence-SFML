@@ -20,16 +20,22 @@ void GameScene::render(sf::RenderWindow& mWindow, double mDeltaTime) {
 				switch (stages[0].getMonsterId()) {
 					//todo add monsters textures vector
 				case 0:
-					enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 50, 400.0, 30, map->getPathPoints())));
+					enemies.push_back(std::make_shared<Enemy>(Enemy(enemiesTexturesVector[0].get(), 30, 50, 200.0, 30, map->getPathPoints(), 4, 0.4)));
 					break;
 				case 1:
-					enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 100, 300.0, 30, map->getPathPoints())));
+					enemies.push_back(std::make_shared<Enemy>(Enemy(enemiesTexturesVector[1].get(), 30, 100, 200.0, 30, map->getPathPoints(), 6, 0.4)));
 					break;
 				case 2:
-					enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 150, 200.0, 30, map->getPathPoints())));
+					enemies.push_back(std::make_shared<Enemy>(Enemy(enemiesTexturesVector[2].get(), 30, 150, 200.0, 30, map->getPathPoints(), 4, 0.4)));
 					break;
 				case 3:
-					enemies.push_back(std::make_shared<Enemy>(Enemy(turretsTexturesVector[stages[0].getMonsterId()].get(), 30, 200, 100.0, 30, map->getPathPoints())));
+					enemies.push_back(std::make_shared<Enemy>(Enemy(enemiesTexturesVector[3].get(), 30, 200, 100.0, 30, map->getPathPoints(), 4, 0.4)));
+					break;
+				case 4:
+					enemies.push_back(std::make_shared<Enemy>(Enemy(enemiesTexturesVector[4].get(), 30, 200, 100.0, 30, map->getPathPoints(), 4, 0.6)));
+					break;
+				case 5:
+					enemies.push_back(std::make_shared<Enemy>(Enemy(enemiesTexturesVector[5].get(), 30, 200, 100.0, 30, map->getPathPoints(), 8, 0.6)));
 					break;
 
 				}
@@ -151,27 +157,41 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 
 	//loading turrets textures
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[0]->loadFromFile("images/tower1.png");
+	turretsTexturesVector[0]->loadFromFile("images/towers/tower1.png");
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[1]->loadFromFile("images/tower2.png");
+	turretsTexturesVector[1]->loadFromFile("images/towers/tower2.png");
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[2]->loadFromFile("images/tower3.png");
+	turretsTexturesVector[2]->loadFromFile("images/towers/tower3.png");
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[3]->loadFromFile("images/tower4.png");
+	turretsTexturesVector[3]->loadFromFile("images/towers/tower4.png");
 
 	//loading bullets textures
 	bulletsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	bulletsTexturesVector[0]->loadFromFile("images/bullet1.png");
+	bulletsTexturesVector[0]->loadFromFile("images/bullets/bullet1.png");
+
+	//loading enemies textures
+	enemiesTexturesVector.push_back(std::make_unique<sf::Texture>());
+	enemiesTexturesVector[0]->loadFromFile("images/enemies/enemy1.png");
+	enemiesTexturesVector.push_back(std::make_unique<sf::Texture>());
+	enemiesTexturesVector[1]->loadFromFile("images/enemies/enemy2.png");
+	enemiesTexturesVector.push_back(std::make_unique<sf::Texture>());
+	enemiesTexturesVector[2]->loadFromFile("images/enemies/enemy3.png");
+	enemiesTexturesVector.push_back(std::make_unique<sf::Texture>());
+	enemiesTexturesVector[3]->loadFromFile("images/enemies/enemy4.png");
+	enemiesTexturesVector.push_back(std::make_unique<sf::Texture>());
+	enemiesTexturesVector[4]->loadFromFile("images/enemies/enemy5.png");
+	enemiesTexturesVector.push_back(std::make_unique<sf::Texture>());
+	enemiesTexturesVector[5]->loadFromFile("images/enemies/enemy6.png");
 
 
 	map = std::make_unique<GameMap>(gameSize.y, gameSize.y);
-	gameHUD = std::make_unique<GameHUD>(sf::Vector2f(gameSize.x - gameSize.y, gameSize.y), sf::Vector2f(gameSize.y, 0), sf::Vector2f((gameSize.y)/20.0,gameSize.y /20.0));
+	gameHUD = std::make_unique<GameHUD>(sf::Vector2f(gameSize.x - gameSize.y, gameSize.y), sf::Vector2f(gameSize.y, 0), sf::Vector2f((gameSize.y)/20.0,gameSize.y /20.0), turretsTexturesVector);
 	player = std::make_unique<Player>("Nazwa gracza", 0, 100, 180);
 
 
 
 	//creating stages
-	stages.push_back(Stage(std::vector<int>{3, 4}, 0.5));
+	stages.push_back(Stage(std::vector<int>{1, 1, 1, 1, 1, 1}, 0.5));
 	stages.push_back(Stage(std::vector<int>{5, 8, 3}, 0.5));
 	stages.push_back(Stage(std::vector<int>{15, 18, 5, 1}, 0.5));
 
@@ -271,7 +291,7 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 			render(mWindow, deltaTime);
 		}
 		else {
-			std::cout << "dt:" << deltaTime << std::endl;
+			//std::cout << "dt:" << deltaTime << std::endl;
 		}
 
 

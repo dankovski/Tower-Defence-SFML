@@ -6,7 +6,7 @@
 class GameHUD
 {
 public:
-	GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vector2f mTurretSize);
+	GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vector2f mTurretSize, std::vector<std::shared_ptr<sf::Texture>> mTurretsTextures);
 	GameHUD();
 	void draw(sf::RenderWindow& window);
 	void render(int mPlayerGold, sf::Vector2f mMousePosition, bool mIsAvailable);
@@ -29,7 +29,7 @@ private:
 	std::unique_ptr<sf::Font> font;
 
 	std::vector<TurretHUD> turretsVector;
-	std::vector<std::unique_ptr<sf::Texture>> turretsTexturesVector;
+	std::vector<std::shared_ptr<sf::Texture>> turretsTexturesVector;
 	bool isTurretClicked;
 	int clickedTurretNumber;
 

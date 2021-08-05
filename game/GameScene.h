@@ -31,8 +31,9 @@ private:
 	void draw(sf::RenderWindow& mWindow);
 	std::vector<std::shared_ptr<Enemy>> enemies;
 	std::vector<std::shared_ptr<Tower>> towers;
-	std::vector<std::unique_ptr<sf::Texture>> turretsTexturesVector;
+	std::vector<std::shared_ptr<sf::Texture>> turretsTexturesVector;
 	std::vector<std::unique_ptr<sf::Texture>> bulletsTexturesVector;
+	std::vector<std::unique_ptr<sf::Texture>> enemiesTexturesVector;
 	std::vector<Stage> stages;
 	bool stageStarted;
 	std::vector<Button> buttons;

@@ -1,13 +1,19 @@
 #include "Enemy.h"
 
-Enemy::Enemy(sf::Texture* mTexture, int mDamage, int mHp, float mSpeed, int mReward, std::vector<sf::Vector2f> mPathPoints) {
-	sprite.setTexture(*mTexture);
-	sprite.setOrigin(sf::Vector2f(sprite.getGlobalBounds().width / 2, sprite.getGlobalBounds().height / 2));
-	sprite.setPosition(mPathPoints[0]);
+Enemy::Enemy(sf::Texture* mTexture, int mDamage, int mHp, float mSpeed, int mReward, std::vector<sf::Vector2f> mPathPoints, int mTextureFrames, float mAnimationDuration) {
+	spritePointer = std::make_unique<sf::Sprite>();
+	spritePointer->setTexture(*mTexture);
+	walkAnimation = Animator(spritePointer.get(), mTextureFrames, mAnimationDuration);
 
-	hpBar.setSize(sf::Vector2f(50, 10));
+	spritePointer->setOrigin(sf::Vector2f(spritePointer->getGlobalBounds().width / 2, spritePointer->getGlobalBounds().height / 2));
+	spritePointer->setPosition(mPathPoints[0]);
+
+	hpBar.setSize(sf::Vector2f(50, 5));
 	hpBar.setFillColor(sf::Color::Green);
-	hpBar.setPosition(sf::Vector2f(sprite.getPosition())+sf::Vector2f(-25, -40));
+	hpBar.setPosition(sf::Vector2f(spritePointer->getPosition())+sf::Vector2f(-25, -40));
+	hpBar.setOutlineThickness(2);
+	hpBar.setOutlineColor(sf::Color::Black);
+
 	maxHp = mHp;
 	speed = mSpeed;
 	pathIndex = 1;
@@ -17,19 +23,18 @@ Enemy::Enemy(sf::Texture* mTexture, int mDamage, int mHp, float mSpeed, int mRew
 	hp = mHp;
 }
 
-
-
 void Enemy::render(double mDeltaTime) {
 	hpBar.setSize(sf::Vector2f((float)hp/maxHp*50,10));
-	hpBar.setPosition(sf::Vector2f(sprite.getPosition()) + sf::Vector2f(-25, -40));
+	hpBar.setPosition(sf::Vector2f(spritePointer->getPosition()) + sf::Vector2f(-25, -40));
+
 
 	if (pathIndex < pathPoints.size() &&
 		( (pathPoints[pathIndex].x == pathPoints[pathIndex - 1].x && (
-		( (pathPoints[pathIndex].y - pathPoints[pathIndex - 1].y) > 0 && sprite.getPosition().y - pathPoints[pathIndex].y > 0) ||
-		( (pathPoints[pathIndex].y - pathPoints[pathIndex - 1].y) < 0 && sprite.getPosition().y - pathPoints[pathIndex].y < 0) )) ||
+		( (pathPoints[pathIndex].y - pathPoints[pathIndex - 1].y) > 0 && spritePointer->getPosition().y - pathPoints[pathIndex].y > 0) ||
+		( (pathPoints[pathIndex].y - pathPoints[pathIndex - 1].y) < 0 && spritePointer->getPosition().y - pathPoints[pathIndex].y < 0) )) ||
 		(pathPoints[pathIndex].y == pathPoints[pathIndex - 1].y && (
-			((pathPoints[pathIndex].x - pathPoints[pathIndex - 1].x) > 0 && sprite.getPosition().x - pathPoints[pathIndex].x > 0) ||
-			((pathPoints[pathIndex].x - pathPoints[pathIndex - 1].x) < 0 && sprite.getPosition().x - pathPoints[pathIndex].x < 0) )) )) {
+			((pathPoints[pathIndex].x - pathPoints[pathIndex - 1].x) > 0 && spritePointer->getPosition().x - pathPoints[pathIndex].x > 0) ||
+			((pathPoints[pathIndex].x - pathPoints[pathIndex - 1].x) < 0 && spritePointer->getPosition().x - pathPoints[pathIndex].x < 0) )) )) {
 	pathIndex++;
 	if (pathIndex == pathPoints.size()) {
 		direction = sf::Vector2f(0, 0);
@@ -43,21 +48,23 @@ void Enemy::render(double mDeltaTime) {
 
 	if (isEnemyStunned) {
 		timeFromLastStun += mDeltaTime;
-		sprite.setColor(sf::Color::Blue);
+		spritePointer->setColor(sf::Color::Blue);
 		if (timeFromLastStun >= stunTime) {
 			isEnemyStunned = false;
 		}
 	}
 	else if (isSlowed) {
-		sprite.move(sf::Vector2f(0.5*direction.x * mDeltaTime * speed, 0.5*direction.y * mDeltaTime * speed));
-		sprite.setColor(sf::Color::Green);
+		spritePointer->move(sf::Vector2f(0.5*direction.x * mDeltaTime * speed, 0.5*direction.y * mDeltaTime * speed));
+		spritePointer->setColor(sf::Color::Green);
 	}
 	else {
-		sprite.setColor(sf::Color::White);
-		sprite.move(sf::Vector2f(direction.x * mDeltaTime * speed, direction.y * mDeltaTime * speed));
+		spritePointer->move(sf::Vector2f(direction.x * mDeltaTime * speed, direction.y * mDeltaTime * speed));
+		spritePointer->setColor(sf::Color::White);
+	}
+	if (!isEnemyStunned) {
+		walkAnimation.update(mDeltaTime);
 	}
 	
-
 }
 
 bool Enemy::isAttacking()
@@ -82,12 +89,12 @@ void Enemy::receiveDamage(int mDamage)
 
 sf::FloatRect Enemy::getGlobalBounds()
 {
-	return sprite.getGlobalBounds();
+	return spritePointer->getGlobalBounds();
 }
 
 sf::Vector2f Enemy::getPosition()
 {
-	return sprite.getPosition();
+	return spritePointer->getPosition();
 }
 
 void Enemy::startStun(double mStunTime)
@@ -104,6 +111,6 @@ bool Enemy::isStunned()
 
 
 void Enemy::draw(sf::RenderWindow& mWindow) {
-	mWindow.draw(sprite);
+	mWindow.draw(*spritePointer.get());
 	mWindow.draw(hpBar);
 }

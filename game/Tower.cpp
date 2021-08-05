@@ -118,7 +118,6 @@ void Tower::render(double mDeltaTime) {
 
 
 	if (hasTarget) {
-		std::cout << 1.0 / attackSpeed << std::endl;
 		if (timeFromLastAttack >= 1.0 / attackSpeed) {
 			attack();
 			timeFromLastAttack = 0.0;

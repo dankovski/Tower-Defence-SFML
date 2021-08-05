@@ -1,21 +1,25 @@
-﻿  TurretHUD.cpp
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\TurretHUD.cpp(18,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+﻿  Enemy.cpp
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(31,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(57,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\TurretHUD.cpp(25,42): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\TurretHUD.cpp(34,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\TurretHUD.cpp(47,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(57,65): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\TurretHUD.cpp(48,74): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(61,95): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\Enemy.cpp(61,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/PROFILE' specification
-Bullet.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:REF' specification
+Animator.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:REF' specification
   game.vcxproj -> C:\Users\Danko\Desktop\Tower Defence SFML\game\Debug\game.exe

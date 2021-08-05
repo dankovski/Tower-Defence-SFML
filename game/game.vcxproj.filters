@@ -83,6 +83,9 @@
     <ClCompile Include="StunTower.cpp">
       <Filter>Game\Towers</Filter>
     </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -144,6 +147,9 @@
     </ClInclude>
     <ClInclude Include="StunTower.h">
       <Filter>Game\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

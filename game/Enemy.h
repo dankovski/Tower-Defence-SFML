@@ -1,11 +1,13 @@
 #pragma once
 #include "sfml/Graphics.hpp"
 #include <iostream>
+#include "Animator.h"
 
 class Enemy
 {
 private:
-	sf::Sprite sprite;
+	//sf::Sprite sprite;
+	std::unique_ptr<sf::Sprite> spritePointer;
 	int damage;
 	int hp;
 	int maxHp;
@@ -14,15 +16,16 @@ private:
 	std::vector<sf::Vector2f> pathPoints;
 	int pathIndex;
 	sf::Vector2f direction;
-
 	bool isEnemyStunned = false;
 	double timeFromLastStun;
 	double stunTime;
 	sf::RectangleShape hpBar;
 	bool isSlowed = false;
 
+	Animator walkAnimation;
+
 public:
-	Enemy(sf::Texture* mTexture, int mDamage, int mHp, float mSpeed, int mReward, std::vector<sf::Vector2f> mPathPoints);
+	Enemy(sf::Texture* mTexture, int mDamage, int mHp, float mSpeed, int mReward, std::vector<sf::Vector2f> mPathPoints, int mTextureFrames, float mAnimationDuration);
 	void draw(sf::RenderWindow& mWindow);
 	void render(double mDeltaTime);
 	bool isAttacking();

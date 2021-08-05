@@ -5,7 +5,7 @@ GameHUD::GameHUD() {
 }
 
 
-GameHUD::GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vector2f mTurretSize) {
+GameHUD::GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vector2f mTurretSize, std::vector<std::shared_ptr<sf::Texture>> mTurretsTextures) {
 	background.setSize(sf::Vector2f(mBackgroundSize.x, mBackgroundSize.y));
 	background.setPosition(mPosition);
 	background.setFillColor(sf::Color::Blue);
@@ -23,15 +23,7 @@ GameHUD::GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vecto
 		std::cout << "nie wczytalo coin.png" << std::endl;
 	}
 
-
-	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[0]->loadFromFile("images/tower1.png");
-	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[1]->loadFromFile("images/tower2.png");
-	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[2]->loadFromFile("images/tower3.png");
-	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
-	turretsTexturesVector[3]->loadFromFile("images/tower4.png");
+	turretsTexturesVector = mTurretsTextures;
 
 
 	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[0].get(), coinTexture.get(),  sf::Vector2f(mPosition.x+mBackgroundSize.x / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 80, 200));

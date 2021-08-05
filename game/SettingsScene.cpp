@@ -14,7 +14,7 @@ SettingsScene::SettingsScene(int mWidth, int mHeight, Settings* mSettings) {
 		std::cout << "nie wczytalo fontow" << std::endl;
 	}
 
-	if (!texture.loadFromFile("images/menu22.png"))
+	if (!texture.loadFromFile("images/menu2.jpg"))
 	{
 		std::cout << "nie wczytalo textury" << std::endl;
 	}
