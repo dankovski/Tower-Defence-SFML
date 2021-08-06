@@ -70,31 +70,28 @@ void TurretHUD::render(int mPlayerGold, sf::Vector2f mMousePosition, bool mIsAva
 	if (!isClicked) {
 		turretSprite.setPosition(initPosition);
 		if (mPlayerGold >= goldValue) {
-			turretSprite.setColor(sf::Color::Green);
+			goldText.setFillColor(sf::Color::Green);
 			isAvailable = true;
 		}
 		else {
-			turretSprite.setColor(sf::Color::Red);
+			goldText.setFillColor(sf::Color::Red);
 			isAvailable = false;
 		}
-
 	}
 	else {
 
 		if (mIsAvailable) {
-			turretSprite.setColor(sf::Color::Green);
+			turretRangeCircle.setOutlineColor(sf::Color::Cyan);
 			isAvailable = true;
 		}
 		else {
-			turretSprite.setColor(sf::Color::Red);
+			turretRangeCircle.setOutlineColor(sf::Color::Red);
 			isAvailable = false;
 		}
 
 		turretSprite.setPosition(sf::Vector2f(mMousePosition.x, mMousePosition.y));
 		turretRangeCircle.setPosition(sf::Vector2f(mMousePosition.x, mMousePosition.y));
 	}
-
-
 }
 
 bool TurretHUD::isColliding(sf::Vector2f mMousePosition) {

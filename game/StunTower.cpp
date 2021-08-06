@@ -2,7 +2,7 @@
 
 
 StunTower::StunTower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vector2f mPosition) :
-	Tower(mTurretTexture, mBulletTexture, mPosition, 200, 5, 0.5) {
+	Tower(mTurretTexture, mBulletTexture, mPosition, getRange(), 5, 0.5) {
 	stunTime = 1.0;
 };
 
@@ -37,4 +37,14 @@ bool StunTower::hasEnemyInRange(std::shared_ptr<Enemy> mEnemy) {
 	if (yDistance <= (mEnemyGlobalBounds.height / 2.0)) { return true; }
 
 	return (sqrt(pow((xDistance - mEnemyGlobalBounds.width / 2.0), 2.0) + pow((yDistance - mEnemyGlobalBounds.height / 2.0), 2)) <= range.getRadius());
+}
+
+int StunTower::getValue()
+{
+	return 80;
+}
+
+int StunTower::getRange()
+{
+	return 300;
 }

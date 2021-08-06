@@ -6,9 +6,11 @@ GameHUD::GameHUD() {
 
 
 GameHUD::GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vector2f mTurretSize, std::vector<std::shared_ptr<sf::Texture>> mTurretsTextures) {
+	
 	background.setSize(sf::Vector2f(mBackgroundSize.x, mBackgroundSize.y));
 	background.setPosition(mPosition);
 	background.setFillColor(sf::Color::Blue);
+
 	isTurretClicked = false;
 	font = std::make_unique<sf::Font>();
 	coinTexture = std::make_unique<sf::Texture>();
@@ -26,10 +28,10 @@ GameHUD::GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vecto
 	turretsTexturesVector = mTurretsTextures;
 
 
-	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[0].get(), coinTexture.get(),  sf::Vector2f(mPosition.x+mBackgroundSize.x / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 80, 200));
-	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[1].get(), coinTexture.get(), sf::Vector2f(mPosition.x+mBackgroundSize.x * 2 / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 120, 300));
-	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[2].get(), coinTexture.get(), sf::Vector2f(mPosition.x + mBackgroundSize.x / 3, mPosition.y + mBackgroundSize.y *2/ 6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 100, 200));
-	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[3].get(), coinTexture.get(), sf::Vector2f(mPosition.x + mBackgroundSize.x * 2 / 3, mPosition.y + mBackgroundSize.y*2 / 6), sf::Vector2f(mTurretSize.x, mTurretSize.y), 50, 300));
+	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[0].get(), coinTexture.get(),  sf::Vector2f(mPosition.x+mBackgroundSize.x / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), GravesTower::getValue(), GravesTower::getRange()));
+	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[1].get(), coinTexture.get(), sf::Vector2f(mPosition.x+mBackgroundSize.x * 2 / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), RocketTower::getValue(), RocketTower::getRange()));
+	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[2].get(), coinTexture.get(), sf::Vector2f(mPosition.x + mBackgroundSize.x / 3, mPosition.y + mBackgroundSize.y *2/ 6), sf::Vector2f(mTurretSize.x, mTurretSize.y), StunTower::getValue(), StunTower::getRange()));
+	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[3].get(), coinTexture.get(), sf::Vector2f(mPosition.x + mBackgroundSize.x * 2 / 3, mPosition.y + mBackgroundSize.y*2 / 6), sf::Vector2f(mTurretSize.x, mTurretSize.y), TripleTower::getValue(), TripleTower::getRange()));
 
 
 }
@@ -97,7 +99,7 @@ bool GameHUD::isAnyTurretsClicked() {
 
 }
 
-int GameHUD::getTurretClcikedNumber() {
+int GameHUD::getTurretClickedNumber() {
 
 	return clickedTurretNumber;
 }

@@ -6,6 +6,8 @@ public:
 	StunTower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vector2f mPosition);
 	void checkBulletsCollision(Enemy* mEnemyPointer);
 	bool hasEnemyInRange(std::shared_ptr<Enemy> mEnemy);
+	static int getValue();
+	static int getRange();
 private:
 	float stunTime;
 };

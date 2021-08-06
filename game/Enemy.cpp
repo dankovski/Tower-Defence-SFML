@@ -21,6 +21,8 @@ Enemy::Enemy(sf::Texture* mTexture, int mDamage, int mHp, float mSpeed, int mRew
 	direction = sf::Vector2f(pathPoints[pathIndex].x - pathPoints[pathIndex - 1].x, pathPoints[pathIndex].y - pathPoints[pathIndex - 1].y);
 	direction = direction / (sqrt(direction.x * direction.x + direction.y * direction.y));
 	hp = mHp;
+	damage = mDamage;
+	reward = mReward;
 }
 
 void Enemy::render(double mDeltaTime) {
@@ -107,6 +109,16 @@ void Enemy::startStun(double mStunTime)
 bool Enemy::isStunned()
 {
 	return isEnemyStunned;
+}
+
+int Enemy::getRewardValue()
+{
+	return reward;
+}
+
+int Enemy::getDamageValue()
+{
+	return damage;
 }
 
 

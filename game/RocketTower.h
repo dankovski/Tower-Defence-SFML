@@ -5,9 +5,9 @@
 
 class RocketTower : public Tower{
 
-
 public:
 	RocketTower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vector2f mPosition);
-
+	static int getValue();
+	static int getRange();
 };
 

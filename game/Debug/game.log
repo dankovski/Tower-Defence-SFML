@@ -1,4 +1,85 @@
-﻿  Animator.cpp
+﻿  GameScene.cpp
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(5,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(5,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(43,133): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(46,134): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(49,134): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(52,134): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(55,134): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(58,134): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(77,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(79,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(88,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(98,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(124,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(128,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(131,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(137,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(182,88): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(182,71): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(182,106): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(183,91): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(183,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(183,110): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(215,160): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(215,143): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(228,38): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(236,40): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(239,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(244,37): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(247,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(252,44): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(255,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(260,39): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(263,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(301,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(351,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(353,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(363,23): warning C4018: '<': signed/unsigned mismatch
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(3580,56): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(214): message : see reference to function template instantiation 'std::unique_ptr<GameMap,std::default_delete<GameMap>> std::make_unique<GameMap,T&,T&,0>(T &,T &)' being compiled
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(390): warning C4715: 'GameScene::run': not all control paths return a value
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/PROFILE' specification
 Animator.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:REF' specification
   game.vcxproj -> C:\Users\Danko\Desktop\Tower Defence SFML\game\Debug\game.exe

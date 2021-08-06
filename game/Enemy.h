@@ -6,7 +6,6 @@
 class Enemy
 {
 private:
-	//sf::Sprite sprite;
 	std::unique_ptr<sf::Sprite> spritePointer;
 	int damage;
 	int hp;
@@ -35,6 +34,8 @@ public:
 	sf::Vector2f getPosition();
 	void startStun(double mStunTime);
 	bool isStunned();
+	int getRewardValue();
+	int getDamageValue();
 
 };
 

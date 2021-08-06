@@ -5,6 +5,8 @@ GameScene::GameScene(int mWidth, int mHeight){
 	gameSize = sf::Vector2f(mWidth, mHeight);
 	running = false;
 	stageStarted = false;
+
+
 }
 
 void GameScene::render(sf::RenderWindow& mWindow, double mDeltaTime) {
@@ -12,13 +14,31 @@ void GameScene::render(sf::RenderWindow& mWindow, double mDeltaTime) {
 
 	gameHUD->render(player->getGold(), map->getCenterOfTile(mousePosition), map->isTileAvailable(mousePosition));
 
+	//updating fps
+	timeFromFpsUpdate += mDeltaTime / pow(2, gameSpeed);
+	if (timeFromFpsUpdate >= 1.0) {
+		fpsText.setString("FPS: " + std::to_string((int)floor(1.0 / (mDeltaTime / pow(2, gameSpeed)))));
+		timeFromFpsUpdate = 0.0;
+	}
+	
+	//checking defeat
+	if (player->getHealth() <= 0) {
+		std::cout << "defeat" << std::endl;
+	}
+
+
+	//update texts
+	hpText.setString("HP: " + std::to_string(player->getHealth()));
+	scoreText.setString("SCORE: " + std::to_string(player->getScore()));
+	gameSpeedText.setString("GAME SPEED: " + std::to_string((int)pow(2, gameSpeed)) + "X");
+	goldText.setString("GOLD: " + std::to_string(player->getGold()));
+
 	//respawning enemies
 	if (!stages.empty()) {
 		if (stageStarted) {
 			stages[0].render(mDeltaTime);
 			if (stages[0].canMonsterSpawn(1.0)) {
 				switch (stages[0].getMonsterId()) {
-					//todo add monsters textures vector
 				case 0:
 					enemies.push_back(std::make_shared<Enemy>(Enemy(enemiesTexturesVector[0].get(), 30, 50, 200.0, 30, map->getPathPoints(), 4, 0.4)));
 					break;
@@ -48,10 +68,9 @@ void GameScene::render(sf::RenderWindow& mWindow, double mDeltaTime) {
 			}
 		}
 	}
-
 	//end of the level
 	else {
-		std::cout << "koniec poziomu" << std::endl;
+		std::cout << "level ended" << std::endl;
 	}
 
 	//rendering enemies
@@ -79,17 +98,19 @@ void GameScene::render(sf::RenderWindow& mWindow, double mDeltaTime) {
 	for (int i = 0; i < enemies.size(); i++) {
 		if (enemies[i]->getHp() <= 0) {
 			stages[0].addMonsterKilled();
+			player->addGold(enemies[i]->getRewardValue());
+			player->addScore(10);
 			enemies[i].reset();
 			enemies.erase(enemies.begin()+i);
-			
-			//todo add points and gold
 			i--;
 		}
 		else if (enemies[i]->isAttacking()) {
 			stages[0].addMonsterKilled();
+			player->removeHealth(enemies[i]->getDamageValue());
 			enemies[i].reset();
 			enemies.erase(enemies.begin()+i);
-			//todo minus player hp
+
+			
 			i--;
 		}
 	}
@@ -121,10 +142,16 @@ void GameScene::draw(sf::RenderWindow& mWindow) {
 		buttons[0].draw(mWindow);
 	}
 
-
+	mWindow.draw(fpsText);
+	mWindow.draw(scoreText);
+	mWindow.draw(hpText);
+	mWindow.draw(goldText);
+	mWindow.draw(gameSpeedText);
 }
 
 int GameScene::run(sf::RenderWindow& mWindow) {
+
+	gameStates gameState = gameStates::GAME;
 
 	std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
 	std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
@@ -151,9 +178,9 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 		std::cout << "nie wczytalo fontow" << std::endl;
 	}
 
-
 	//creating buttons
 	buttons.push_back(Button(&font, "NEXT STAGE", sf::Vector2f(gameSize.x*0.92, gameSize.y*0.92), gameSize.y/40.0, sf::Color::Yellow));
+	buttons.push_back(Button(&font, "GAME SPEED", sf::Vector2f(gameSize.x * 0.92, gameSize.y * 0.8), gameSize.y / 40.0, sf::Color::Yellow));
 
 	//loading turrets textures
 	turretsTexturesVector.push_back(std::make_unique<sf::Texture>());
@@ -189,11 +216,53 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 	player = std::make_unique<Player>("Nazwa gracza", 0, 100, 180);
 
 
-
 	//creating stages
 	stages.push_back(Stage(std::vector<int>{1, 1, 1, 1, 1, 1}, 0.5));
 	stages.push_back(Stage(std::vector<int>{5, 8, 3}, 0.5));
 	stages.push_back(Stage(std::vector<int>{15, 18, 5, 1}, 0.5));
+
+	//creating texts
+	fpsText.setFont(font);
+	fpsText.setString("FPS: 0");
+	fpsText.setFillColor(sf::Color::Green);
+	fpsText.setCharacterSize(gameSize.y * 0.02);
+	fpsText.setOutlineThickness(3);
+	fpsText.setOutlineColor(sf::Color::Black);
+	fpsText.setPosition(0, 0);
+
+	scoreText.setFont(font);
+	scoreText.setString("SCORE: 0");
+	scoreText.setFillColor(sf::Color::Green);
+	scoreText.setCharacterSize(gameSize.y * 0.02);
+	scoreText.setOutlineThickness(3);
+	scoreText.setOutlineColor(sf::Color::Black);
+	scoreText.setPosition(gameSize.x * 0.84, 0);
+
+	hpText.setFont(font);
+	hpText.setString("HP: 100");
+	hpText.setFillColor(sf::Color::Green);
+	hpText.setCharacterSize(gameSize.y * 0.02);
+	hpText.setOutlineThickness(3);
+	hpText.setOutlineColor(sf::Color::Black);
+	hpText.setPosition(gameSize.x * 0.84, 30);
+
+	gameSpeedText.setFont(font);
+	gameSpeedText.setString("GAME SPEED: 0");
+	gameSpeedText.setFillColor(sf::Color::Green);
+	gameSpeedText.setCharacterSize(gameSize.y * 0.02);
+	gameSpeedText.setOutlineThickness(3);
+	gameSpeedText.setOutlineColor(sf::Color::Black);
+	gameSpeedText.setPosition(gameSize.x * 0.84, 60);
+
+	goldText.setFont(font);
+	goldText.setString("GOLD: 0");
+	goldText.setFillColor(sf::Color::Green);
+	goldText.setCharacterSize(gameSize.y * 0.02);
+	goldText.setOutlineThickness(3);
+	goldText.setOutlineColor(sf::Color::Black);
+	goldText.setPosition(gameSize.x * 0.84, 90);
+
+	gameSpeed = 0;
 
 
 	while (running) {
@@ -202,14 +271,24 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 
 		while (mWindow.pollEvent(event)) {
 			
+
+
 			//starting stage (button)
 			if (!stages.empty() && !stageStarted && (event.type == sf::Event::MouseButtonPressed && buttons[0].isColliding(mousePosition)) && event.mouseButton.button == sf::Mouse::Left) {
 			stageStarted = true;
 			stages[0].startStage();
 			}
 
+			//changing game speed (button)
+			if (event.type == sf::Event::MouseButtonPressed && buttons[1].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
+				gameSpeed++;
+				if (gameSpeed == 3) {
+					gameSpeed = 0;
+				}
+			}
+
 			//closing window
-			if (event.type == sf::Event::Closed) {
+			if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) ) {
 				return 0;
 			}
 
@@ -217,10 +296,16 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 			for (int i = 0; i < gameHUD->getTurretsVectorSize(); i++) {
 			if (!gameHUD->isAnyTurretsClicked() && event.type == sf::Event::MouseButtonPressed && gameHUD->checkTurretCollision(mousePosition, i) && event.mouseButton.button == sf::Mouse::Left) {
 				gameHUD->setTurretClicked(i);
-				canPlaceTurret = false;
-				for (int k = 0; k < towers.size(); k++) {
-					towers[k]->setTowerSelected(false);
+				if (gameHUD->isClickedTurretAvailable()) {
+					canPlaceTurret = false;
+					for (int k = 0; k < towers.size(); k++) {
+						towers[k]->setTowerSelected(false);
+					}
 				}
+				else {
+					gameHUD->setTurretsUnclicked();
+				}
+
 			}
 			}
 
@@ -237,18 +322,22 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 			//placing selected turret
 			if (canPlaceTurret && gameHUD->isAnyTurretsClicked() && gameHUD->isClickedTurretAvailable() && event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
 
-				switch (gameHUD->getTurretClcikedNumber()) {
+				switch (gameHUD->getTurretClickedNumber()) {
 				case 0:
-					towers.push_back(std::shared_ptr<Tower>(new GravesTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					towers.push_back(std::shared_ptr<Tower>(new GravesTower(turretsTexturesVector[gameHUD->getTurretClickedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					player->addGold(-GravesTower::getValue());
 					break;
 				case 1:
-					towers.push_back(std::shared_ptr<Tower>(new RocketTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					towers.push_back(std::shared_ptr<Tower>(new RocketTower(turretsTexturesVector[gameHUD->getTurretClickedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					player->addGold(-RocketTower::getValue());
 					break;
 				case 2:
-					towers.push_back(std::shared_ptr<Tower>(new StunTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					towers.push_back(std::shared_ptr<Tower>(new StunTower(turretsTexturesVector[gameHUD->getTurretClickedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					player->addGold(-StunTower::getValue());
 					break;
 				case 3:
-					towers.push_back(std::shared_ptr<Tower>(new TripleTower(turretsTexturesVector[gameHUD->getTurretClcikedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					towers.push_back(std::shared_ptr<Tower>(new TripleTower(turretsTexturesVector[gameHUD->getTurretClickedNumber()].get(), bulletsTexturesVector[0].get(), map->getCenterOfTile(mousePosition))));
+					player->addGold(-TripleTower::getValue());
 					break;
 
 				}
@@ -277,6 +366,7 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 				isAnyTowerSelected = false;
 			}
 
+
 		}
 
 
@@ -285,23 +375,15 @@ int GameScene::run(sf::RenderWindow& mWindow) {
 		begin = std::chrono::steady_clock::now();
 
 		
-
-
 		if (mWindow.hasFocus() && deltaTime <0.1) {
-			render(mWindow, deltaTime);
-		}
-		else {
-			//std::cout << "dt:" << deltaTime << std::endl;
+			render(mWindow, deltaTime * pow(2, gameSpeed));
+			
 		}
 
-
-
-		
 		mWindow.clear();
 		draw(mWindow);
 		mWindow.display();
 
-		
 	}
 	running = false;
 

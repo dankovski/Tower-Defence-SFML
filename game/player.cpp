@@ -18,6 +18,26 @@ int Player::getGold() {
 	return playerGold;
 }
 
+void Player::addScore(int mScore)
+{
+	playerScore += mScore;
+}
+
+void Player::addGold(int mGold)
+{
+	playerGold += mGold;
+}
+
+int Player::getHealth()
+{
+	return playerHealth;
+}
+
+void Player::removeHealth(int mHealth)
+{
+	playerHealth -= mHealth;
+}
+
 void Player::setName(std::string name) {
 	playerName = name;
 

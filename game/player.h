@@ -12,6 +12,10 @@ public:
 	int getScore();
 	void saveScore();
 	int getGold();
+	void addScore(int mScore);
+	void addGold(int mGold);
+	int getHealth();
+	void removeHealth(int mHealth);
 
 private:
 

@@ -2,6 +2,10 @@
 #include "sfml/Graphics.hpp"
 #include "TurretHUD.h"
 #include <iostream>
+#include "GravesTower.h"
+#include "RocketTower.h"
+#include "StunTower.h"
+#include "TripleTower.h"
 
 class GameHUD
 {
@@ -17,7 +21,7 @@ public:
 	void setTurretsUnclicked();
 	bool isAnyTurretsClicked();
 	bool isClickedTurretAvailable();
-	int GameHUD::getTurretClcikedNumber();
+	int GameHUD::getTurretClickedNumber();
 
 private:
 	sf::RectangleShape background;
