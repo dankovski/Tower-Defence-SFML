@@ -26,10 +26,8 @@ int main() {
 	
 	std::vector<std::unique_ptr<Scene>> scenes;
 
-	//scenes.push_back(std::make_unique<MenuScene>(window.getSize().x, window.getSize().y));
 	scenes.push_back(std::make_unique<MenuScene>(WIDTH, HEIGHT));
 	scenes.push_back(std::make_unique<HighscoreScene>(WIDTH, HEIGHT));
-	//scenes.push_back(std::make_unique<SettingsScene>(window.getSize().x, window.getSize().y, settings));
 	scenes.push_back(std::make_unique<SettingsScene>(WIDTH, HEIGHT, settings));
 	scenes.push_back(std::make_unique<GameScene>(WIDTH, HEIGHT));
 

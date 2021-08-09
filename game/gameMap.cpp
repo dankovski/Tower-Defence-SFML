@@ -1,9 +1,9 @@
 #include "gameMap.h"
 
-GameMap::GameMap(int width, int height) {
-	widthMap = width;
-	heightMap = height;
-	loadMap();
+GameMap::GameMap(int mWidth, int mHeight, int mLevel) {
+	widthMap = mWidth;
+	heightMap = mHeight;
+	loadMap(mLevel);
 }
 
 
@@ -12,55 +12,35 @@ GameMap::~GameMap() {
 }
 
 
-void GameMap::loadMap() {
+void GameMap::loadMap(int mLevel) {
 
 	castleTexture = std::make_shared<sf::Texture>(); 
-	curveSmallerTexture1 = std::make_shared<sf::Texture>();
-	curveSmallerTexture2 = std::make_shared<sf::Texture>();
-	curveBiggerTexture1 = std::make_shared<sf::Texture>();
-	curveBiggerTexture2 = std::make_shared<sf::Texture>();
-	sideTexture1 = std::make_shared<sf::Texture>();
-	sideTexture2 = std::make_shared<sf::Texture>();
+	curveSmallerTexture = std::make_shared<sf::Texture>();
+	curveBiggerTexture = std::make_shared<sf::Texture>();
+	sideTexture = std::make_shared<sf::Texture>();
 	solidTowerTexture = std::make_shared<sf::Texture>();
 	solidMonsterTexture = std::make_shared<sf::Texture>();
 
-	if (!castleTexture->loadFromFile("images/map1/castle.png"))
+	if (!castleTexture->loadFromFile("images/map"+ std::to_string(mLevel) +"/castle.png"))
 	{
 		std::cout << "nie wczytalo textury MenuScene" << std::endl;
 	}
-	if (!curveBiggerTexture1->loadFromFile("images/map1/curveBigger1.png"))
+	if (!curveBiggerTexture->loadFromFile("images/map"+ std::to_string(mLevel) +"/curveBigger.png"))
+	{
+		std::cout << "nie wczytalo textury MenuScene" << std::endl;
+	} 
+	if (!curveSmallerTexture->loadFromFile("images/map" + std::to_string(mLevel) + "/curveSmaller.png"))
 	{
 		std::cout << "nie wczytalo textury MenuScene" << std::endl;
 	}
-	if (!curveBiggerTexture2->loadFromFile("images/map1/curveBigger2.png"))
+	if (!sideTexture->loadFromFile("images/map" + std::to_string(mLevel) + "/side.png"))
 	{
 		std::cout << "nie wczytalo textury MenuScene" << std::endl;
 	}
-	if (!curveSmallerTexture1->loadFromFile("images/map1/curveSmaller1.png"))
+	if (!solidTowerTexture->loadFromFile("images/map" + std::to_string(mLevel) + "/solidTower.png"))
 	{
 		std::cout << "nie wczytalo textury MenuScene" << std::endl;
 	}
-	if (!curveSmallerTexture2->loadFromFile("images/map1/curveSmaller2.png"))
-	{
-		std::cout << "nie wczytalo textury MenuScene" << std::endl;
-	}
-	if (!sideTexture1->loadFromFile("images/map1/side1.png"))
-	{
-		std::cout << "nie wczytalo textury MenuScene" << std::endl;
-	}
-	if (!sideTexture2->loadFromFile("images/map1/side2.png"))
-	{
-		std::cout << "nie wczytalo textury MenuScene" << std::endl;
-	}
-	if (!solidTowerTexture->loadFromFile("images/map1/solidTower.png"))
-	{
-		std::cout << "nie wczytalo textury MenuScene" << std::endl;
-	}
-	if (!solidMonsterTexture->loadFromFile("images/map1/castle.png"))
-	{
-		std::cout << "nie wczytalo textury MenuScene" << std::endl;
-	}
-
 
 
 	std::fstream file;
@@ -77,7 +57,7 @@ void GameMap::loadMap() {
 	std::vector<sf::Vector2i> pathPoints;
 
 	std::fstream file2;
-	file2.open("images/map1/path.txt");
+	file2.open("images/map" + std::to_string(mLevel) + "/path.txt");
 
 	int row, column;
 	sf::Vector2i c;
@@ -86,8 +66,9 @@ void GameMap::loadMap() {
 			file2 >> row >> column;
 			c.x = row;
 			c.y = column;
-	
 			pathPoints.push_back(c);
+
+			
 	}
 
 		file2.close();
@@ -99,64 +80,67 @@ void GameMap::loadMap() {
 		if (pathPoints[i].x == pathPoints[i - 1].x) {
 			//right
 			if (pathPoints[i].y > pathPoints[i - 1].y) {
-
 				for (int k = pathPoints[i].y-1; k > pathPoints[i - 1].y;k--) {
 
-					tileArray[pathPoints[i].x][k].setTexture(sideTexture1);
+					tileArray[pathPoints[i].x][k].setTexture(sideTexture);
+					tileArray[pathPoints[i].x][k].setRotation(0);
 					tileArray[pathPoints[i].x][k].setAvailable(false);
 
-					tileArray[pathPoints[i].x - 1][k].setTexture(sideTexture1);
+					tileArray[pathPoints[i].x - 1][k].setTexture(sideTexture);
 					tileArray[pathPoints[i].x - 1][k].setRotation(180);
 					tileArray[pathPoints[i].x - 1][k].setAvailable(false);
 				}
-
 				if (i > 1) {
 					//from top
 					if (pathPoints[i - 1].x > pathPoints[i - 2].x) {
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(curveSmallerTexture1);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(curveSmallerTexture);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(180);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(sideTexture1);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(0);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(sideTexture2);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(90);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(curveBiggerTexture2);
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(180);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(curveBiggerTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(-90);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setAvailable(false);
 
 					}
 					//from bottom
 					else {
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(curveSmallerTexture2);
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(180);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(curveSmallerTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(-90);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(sideTexture1);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(sideTexture);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(180);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(sideTexture2);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(90);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(curveBiggerTexture1);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(curveBiggerTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(0);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setAvailable(false);
 
 					}
 
 				}
-	
 			}
 			//left
 			else {
 				for (int k = pathPoints[i].y; k < pathPoints[i - 1].y-1; k++) {
-					tileArray[pathPoints[i].x][k].setTexture(sideTexture1); 
+					tileArray[pathPoints[i].x][k].setTexture(sideTexture); 
+					tileArray[pathPoints[i].x][k].setRotation(0);
 					tileArray[pathPoints[i].x][k].setAvailable(false);
 
-					tileArray[pathPoints[i].x - 1][k].setTexture(sideTexture1);
+					tileArray[pathPoints[i].x - 1][k].setTexture(sideTexture);
 					tileArray[pathPoints[i].x - 1][k].setRotation(180);
 					tileArray[pathPoints[i].x - 1][k].setAvailable(false);
 				}
@@ -165,34 +149,39 @@ void GameMap::loadMap() {
 					//from top
 					if (pathPoints[i - 1].x > pathPoints[i - 2].x) {
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(curveSmallerTexture2);
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(0);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(curveSmallerTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(90);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(sideTexture1);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(0);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(sideTexture2);
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(180);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(-90);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(curveBiggerTexture1);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(curveBiggerTexture);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(180);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setAvailable(false);
 
 					}
 					//from bottom
 					else {
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(curveSmallerTexture1);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(curveSmallerTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(0);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(sideTexture1);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(180);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(sideTexture2);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(-90);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(curveBiggerTexture2);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(curveBiggerTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(90);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setAvailable(false);
 					}
 
@@ -200,8 +189,6 @@ void GameMap::loadMap() {
 
 
 			}
-
-
 		}
 		//up or down
 		else {
@@ -209,11 +196,12 @@ void GameMap::loadMap() {
 			if (pathPoints[i].x > pathPoints[i - 1].x) {
 
 				for (int k = pathPoints[i].x-1; k > pathPoints[i - 1].x; k--) {
-					tileArray[k][pathPoints[i].y].setTexture(sideTexture2);
-					tileArray[k][pathPoints[i].y].setRotation(180);
+					tileArray[k][pathPoints[i].y].setTexture(sideTexture);
+					tileArray[k][pathPoints[i].y].setRotation(-90);
 					tileArray[k][pathPoints[i].y].setAvailable(false);
 				
-					tileArray[k][pathPoints[i].y - 1].setTexture(sideTexture2);
+					tileArray[k][pathPoints[i].y - 1].setTexture(sideTexture);
+					tileArray[k][pathPoints[i].y - 1].setRotation(90);
 					tileArray[k][pathPoints[i].y - 1].setAvailable(false);
 
 				}
@@ -222,35 +210,37 @@ void GameMap::loadMap() {
 				//from left
 					if (pathPoints[i - 1].y > pathPoints[i - 2].y) {
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(curveSmallerTexture1);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(curveSmallerTexture);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(sideTexture1);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(sideTexture);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(180);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(sideTexture2);
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(180);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(-90);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x-1][pathPoints[i - 1].y].setTexture(curveBiggerTexture2);
+						tileArray[pathPoints[i - 1].x-1][pathPoints[i - 1].y].setTexture(curveBiggerTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(90);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setAvailable(false);
 
 					}
 					//from right
 					else {
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(curveSmallerTexture2);
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(180);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(curveSmallerTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(-90);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(sideTexture1);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(sideTexture);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(180);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(sideTexture2);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(90);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(curveBiggerTexture1);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(curveBiggerTexture);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setAvailable(false);
 					}
 				
@@ -260,11 +250,12 @@ void GameMap::loadMap() {
 			//up
 			else {
 				for (int k = pathPoints[i].x; k < pathPoints[i - 1].x-1; k++) {
-					tileArray[k][pathPoints[i].y].setTexture(sideTexture2);
-					tileArray[k][pathPoints[i].y].setRotation(180);
+					tileArray[k][pathPoints[i].y].setTexture(sideTexture);
+					tileArray[k][pathPoints[i].y].setRotation(-90);
 					tileArray[k][pathPoints[i].y].setAvailable(false);
 
-					tileArray[k][pathPoints[i].y - 1].setTexture(sideTexture2);
+					tileArray[k][pathPoints[i].y - 1].setTexture(sideTexture);
+					tileArray[k][pathPoints[i].y - 1].setRotation(90);
 					tileArray[k][pathPoints[i].y - 1].setAvailable(false);
 
 				}
@@ -272,61 +263,53 @@ void GameMap::loadMap() {
 					//from left
 					if (pathPoints[i - 1].y > pathPoints[i - 2].y) {
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(curveSmallerTexture2);
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(0);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(curveSmallerTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(90);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(sideTexture1);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(0);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(sideTexture2);
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(180);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(-90);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(curveBiggerTexture1);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(curveBiggerTexture);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(180);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setAvailable(false);
 
 					}
 					//from right
 					else {
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(curveSmallerTexture1);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setTexture(curveSmallerTexture);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setRotation(180);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(sideTexture1);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setRotation(0);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(sideTexture2);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setTexture(sideTexture);
+						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setRotation(90);
 						tileArray[pathPoints[i - 1].x - 1][pathPoints[i - 1].y - 1].setAvailable(false);
 
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(curveBiggerTexture2);
-						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(180);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setTexture(curveBiggerTexture);
+						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setRotation(-90);
 						tileArray[pathPoints[i - 1].x][pathPoints[i - 1].y - 1].setAvailable(false);
 					}
 
 				}
-
-
 			}
-		
 		}
-
-
-
-
 	}
 
 	
-
 	for (int k = 0; k < pathPoints.size(); k++) {
-		//mapPathPoints.push_back(sf::Vector2f((widthMap / 20.0) / 2 + (widthMap / 20.0) * pathPoints[k].x, (heightMap / 20.0) / 2 + (heightMap / 20.0) * pathPoints[k].y));
 		mapPathPoints.push_back(sf::Vector2f( (heightMap / 20.0) * pathPoints[k].y, (widthMap / 20.0) * pathPoints[k].x));
-
 	}
 
 
-	//scaleMap();
 }
 
 
@@ -365,8 +348,6 @@ bool GameMap::isTileAvailable(sf::Vector2f mMousePosition) {
 				if (tileArray[i][k].isTileAvailable()) {
 					isAvailable = true;
 				}
-
-
 			}
 		}
 	}
@@ -375,7 +356,6 @@ bool GameMap::isTileAvailable(sf::Vector2f mMousePosition) {
 }
 
 void GameMap::setTileType(sf::Vector2f mMousePosition, bool mType) {
-
 
 	for (int i = 0; i < 20; i++) {
 		for (int k = 0; k < 20; k++) {

@@ -27,7 +27,6 @@ GameHUD::GameHUD(sf::Vector2f mBackgroundSize, sf::Vector2f mPosition, sf::Vecto
 
 	turretsTexturesVector = mTurretsTextures;
 
-
 	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[0].get(), coinTexture.get(),  sf::Vector2f(mPosition.x+mBackgroundSize.x / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), GravesTower::getValue(), GravesTower::getRange()));
 	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[1].get(), coinTexture.get(), sf::Vector2f(mPosition.x+mBackgroundSize.x * 2 / 3, mPosition.y+mBackgroundSize.y/6), sf::Vector2f(mTurretSize.x, mTurretSize.y), RocketTower::getValue(), RocketTower::getRange()));
 	turretsVector.push_back(TurretHUD(font.get(), turretsTexturesVector[2].get(), coinTexture.get(), sf::Vector2f(mPosition.x + mBackgroundSize.x / 3, mPosition.y + mBackgroundSize.y *2/ 6), sf::Vector2f(mTurretSize.x, mTurretSize.y), StunTower::getValue(), StunTower::getRange()));

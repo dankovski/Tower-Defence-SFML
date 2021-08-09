@@ -52,7 +52,6 @@ bool Button::isColliding(sf::Vector2i mousePosition) {
 
 }
 
-
 void Button::draw(sf::RenderWindow& window) {
 	//window.draw(rectangle);
 	
@@ -86,7 +85,15 @@ void Button::setPosition(sf::Vector2f pos) {
 		sprite.setPosition(pos);
 		collision = sprite.getGlobalBounds();
 	}
+}
 
+void Button::changeText(std::string mNewText)
+{
+	text.setString(mNewText);
+	text.setOrigin(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2);
+	rectangle.setSize(sf::Vector2f(text.getGlobalBounds().width, text.getGlobalBounds().height));
+	rectangle.setOrigin(sf::Vector2f(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2));
+	collision = rectangle.getGlobalBounds();
 }
 
 

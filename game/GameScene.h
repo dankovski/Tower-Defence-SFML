@@ -33,6 +33,7 @@ private:
 	bool stageStarted;
 	sf::Font font;
 	enum gameStates { GAME, GAME_OVER, EXIT, END_LEVEL };
+	gameStates gameState;
 	int gameSpeed;
 	sf::Vector2f gameSize;
 	sf::Text fpsText;
@@ -41,6 +42,13 @@ private:
 	sf::Text gameSpeedText;
 	sf::Text goldText;
 	double timeFromFpsUpdate;
+	int level;
+
+	sf::Sprite gameMenuSprite;
+	sf::Text gameMenuText1;
+	sf::Text gameMenuText2;
+	Button gameMenuButtonLeft;
+	Button gameMenuButtonRight;
 
 	std::vector<std::shared_ptr<Enemy>> enemies;
 	std::vector<std::shared_ptr<Tower>> towers;

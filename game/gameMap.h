@@ -9,7 +9,7 @@ class GameMap
 {
 public:
 	GameMap();
-	GameMap(int width, int height);
+	GameMap(int mWidth, int mHeight, int mLevel);
 	~GameMap();
 	void draw(sf::RenderWindow& window);
 	sf::Vector2f getCenterOfTile(sf::Vector2f mMousePosition);
@@ -24,18 +24,14 @@ private:
 
 	std::vector<sf::Vector2f> mapPathPoints;
 
-
 	std::shared_ptr<sf::Texture> castleTexture;
-	std::shared_ptr<sf::Texture> curveBiggerTexture1;
-	std::shared_ptr<sf::Texture> curveBiggerTexture2;
-	std::shared_ptr<sf::Texture> curveSmallerTexture1;
-	std::shared_ptr<sf::Texture> curveSmallerTexture2;
-	std::shared_ptr<sf::Texture> sideTexture1;
-	std::shared_ptr<sf::Texture> sideTexture2;
+	std::shared_ptr<sf::Texture> curveBiggerTexture;
+	std::shared_ptr<sf::Texture> curveSmallerTexture;
+	std::shared_ptr<sf::Texture> sideTexture;
 	std::shared_ptr<sf::Texture> solidTowerTexture;
 	std::shared_ptr<sf::Texture> solidMonsterTexture;
 
-	void loadMap();
+	void loadMap(int mLevel);
 
 
 

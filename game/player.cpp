@@ -2,10 +2,8 @@
 
 
 Player::Player() {
-
 	playerName = "noname";
 	playerScore = 0;
-
 }
 Player::Player(std::string mPlayerName, int mPlayerScore, int mPlayerHealth, int mPlayerGold) {
 	playerName = mPlayerName;

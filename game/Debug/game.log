@@ -1,85 +1,668 @@
-﻿  GameScene.cpp
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(5,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+﻿  Animator.cpp
+  Bullet.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Bullet.cpp(12,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Bullet.cpp(15,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Bullet.cpp(20,131): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(5,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Bullet.cpp(20,92): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(43,133): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(46,134): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(49,134): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(52,134): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(55,134): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(58,134): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(77,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(79,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(88,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(98,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(124,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(128,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(131,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(137,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(182,88): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+  Button.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Button.cpp(46,55): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Button.cpp(46,38): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Enemy.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Enemy.cpp(33,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Enemy.cpp(59,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(182,71): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Enemy.cpp(59,65): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(182,106): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(183,91): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Enemy.cpp(63,95): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(183,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Enemy.cpp(63,61): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(183,110): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(215,160): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+  GameScene.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(5,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(215,143): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(5,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(228,38): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(236,40): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(239,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(244,37): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(247,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(252,44): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(255,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(260,39): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(263,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(301,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(351,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(353,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(363,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(20,38): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(28,40): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(31,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(36,37): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(39,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(44,44): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(47,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(52,39): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(55,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(96,134): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(99,135): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(102,135): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(105,135): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(108,135): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(111,135): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(136,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(138,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(144,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(147,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(157,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(202,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(206,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(209,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(216,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(271,71): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(271,53): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(276,44): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(280,70): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(280,52): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(285,44): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(289,70): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(289,52): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(292,86): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(292,68): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(292,105): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(293,86): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(293,68): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(293,105): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(296,91): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(296,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(296,111): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(297,91): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(297,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(297,110): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(335,163): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(335,144): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(380,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(430,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(432,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(442,24): warning C4018: '<': signed/unsigned mismatch
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(3580,56): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(214): message : see reference to function template instantiation 'std::unique_ptr<GameMap,std::default_delete<GameMap>> std::make_unique<GameMap,T&,T&,0>(T &,T &)' being compiled
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(334): message : see reference to function template instantiation 'std::unique_ptr<GameMap,std::default_delete<GameMap>> std::make_unique<GameMap,T&,T&,int&,0>(T &,T &,int &)' being compiled
           with
           [
               T=float
           ]
-C:\Users\Danko\Desktop\Tower Defence SFML\game\game\GameScene.cpp(390): warning C4715: 'GameScene::run': not all control paths return a value
+  GameHUD.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameHUD.cpp(45,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameHUD.cpp(63,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameHUD.cpp(69,45): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameHUD.cpp(69,38): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameHUD.cpp(88,20): warning C4018: '<': signed/unsigned mismatch
+  GravesTower.cpp
+  HighscoreScene.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(26,77): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(26,64): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(103,73): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(103,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(106,75): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(106,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(109,76): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(109,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\memory(3580,56): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\main.cpp(29): message : see reference to function template instantiation 'std::unique_ptr<MenuScene,std::default_delete<MenuScene>> std::make_unique<MenuScene,int,int,0>(int &&,int &&)' being compiled
+  GameMap.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameMap.cpp(51,105): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameMap.cpp(51,65): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameMap.cpp(78,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameMap.cpp(308,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameMap.cpp(309,97): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameMap.cpp(309,60): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  MenuScene.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\MenuScene.cpp(6,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\MenuScene.cpp(21,109): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\MenuScene.cpp(86,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Player.cpp
+  RocketTower.cpp
+  SettingsScene.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(6,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(6,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(44,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(44,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(53,57): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(53,43): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(61,56): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(61,43): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(63,75): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(63,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(63,120): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(63,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(64,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(64,60): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(64,121): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(64,105): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(72,57): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(72,43): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(85,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(85,44): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(87,75): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(87,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(87,120): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(87,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(88,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(88,60): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(88,121): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(88,105): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(96,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(96,44): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(109,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(109,44): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(111,75): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(111,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(111,120): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(111,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(112,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(112,60): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(112,121): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(112,105): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(120,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(120,44): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(128,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(128,44): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(130,75): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(130,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(130,120): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(130,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(131,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(131,60): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(131,121): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(131,105): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(139,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(139,44): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(147,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(147,44): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(149,75): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(149,59): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(149,120): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(149,104): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(150,76): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(150,60): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(150,121): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(150,105): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(153,77): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(153,62): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(155,77): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(155,62): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(157,78): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(157,63): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(200,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(204,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(292,177): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(292,103): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  Settings.cpp
+  Stage.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Stage.cpp(11,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Stage.cpp(27,20): warning C4018: '<': signed/unsigned mismatch
+  StunTower.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\StunTower.cpp(11,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\StunTower.cpp(30,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\StunTower.cpp(31,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Tile.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Tile.cpp(34,21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Tower.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Tower.cpp(6,18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Tower.cpp(44,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Tower.cpp(45,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Tower.cpp(89,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Tower.cpp(96,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Tower.cpp(111,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\Tower.cpp(127,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  TripleTower.cpp
+  Generating Code...
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\SettingsScene.cpp(320): warning C4715: 'SettingsScene::run': not all control paths return a value
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\MenuScene.cpp(149): warning C4715: 'MenuScene::run': not all control paths return a value
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\HighscoreScene.cpp(158): warning C4715: 'HighscoreScene::run': not all control paths return a value
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\GameScene.cpp(501): warning C4715: 'GameScene::run': not all control paths return a value
+  Compiling...
+  TurretHUD.cpp
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\TurretHUD.cpp(18,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\TurretHUD.cpp(25,42): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\TurretHUD.cpp(34,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\TurretHUD.cpp(47,72): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\game\TurretHUD.cpp(48,74): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Generating Code...
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/PROFILE' specification
 Animator.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:REF' specification
-  game.vcxproj -> C:\Users\Danko\Desktop\Tower Defence SFML\game\Debug\game.exe
+  game.vcxproj -> C:\Users\Danko\Desktop\GitHub\Tower-Defence-SFML\Debug\game.exe
