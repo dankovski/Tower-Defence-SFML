@@ -153,7 +153,6 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameHUD.cpp" />
     <ClCompile Include="GravesTower.cpp" />
-    <ClCompile Include="HighscoreScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="MenuScene.cpp" />
@@ -161,8 +160,10 @@
     <ClCompile Include="RocketTower.cpp" />
     <ClCompile Include="SettingsScene.cpp" />
     <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="SlowTower.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StunTower.cpp" />
+    <ClCompile Include="SuperTower.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Tower.cpp" />
     <ClCompile Include="TripleTower.cpp" />
@@ -176,7 +177,6 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameHUD.h" />
     <ClInclude Include="GravesTower.h" />
-    <ClInclude Include="HighscoreScene.h" />
     <ClInclude Include="GameMap.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Player.h" />
@@ -184,8 +184,10 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SettingsScene.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="SlowTower.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StunTower.h" />
+    <ClInclude Include="SuperTower.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Tower.h" />
     <ClInclude Include="TripleTower.h" />

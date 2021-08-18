@@ -76,7 +76,7 @@ public:
     /// \return Value of the variable for the current thread
     ///
     ////////////////////////////////////////////////////////////
-    void* getValue() const;
+    void* getInitValue() const;
 
 private:
 

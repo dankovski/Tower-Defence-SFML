@@ -6,7 +6,6 @@
 
 #include "Scene.h"
 #include "MenuScene.h"
-#include "HighscoreScene.h"
 #include "SettingsScene.h"
 #include "GameScene.h"
 #include "Settings.h"
@@ -16,19 +15,19 @@
 
 
 int main() {
-	Settings* settings = new Settings();
 	
+	std::unique_ptr<Settings> settings;
+	settings = std::make_unique<Settings>();
+
 	sf::RenderWindow window(sf::VideoMode(settings->getResolution().x, settings->getResolution().y), "danko granko", settings->getStyle(), settings->getContextSettings());
     window.setView(sf::View(sf::FloatRect(0,0, WIDTH, HEIGHT)));
 	window.setFramerateLimit(settings->getLimitFPS());
 	window.setVerticalSyncEnabled(settings->getVerticalSync());
 
-	
 	std::vector<std::unique_ptr<Scene>> scenes;
 
 	scenes.push_back(std::make_unique<MenuScene>(WIDTH, HEIGHT));
-	scenes.push_back(std::make_unique<HighscoreScene>(WIDTH, HEIGHT));
-	scenes.push_back(std::make_unique<SettingsScene>(WIDTH, HEIGHT, settings));
+	scenes.push_back(std::make_unique<SettingsScene>(WIDTH, HEIGHT, settings.get()));
 	scenes.push_back(std::make_unique<GameScene>(WIDTH, HEIGHT));
 
 	int screen = 0;

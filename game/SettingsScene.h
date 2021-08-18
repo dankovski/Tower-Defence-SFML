@@ -13,7 +13,7 @@ public:
 
 	SettingsScene(int mWidth, int mHeight, Settings* mSettings);
 	int run(sf::RenderWindow& mWindow);
-	void render(sf::RenderWindow& mWindow);
+	void render(sf::Vector2f mMousePosition);
 	void draw(sf::RenderWindow& mWindow);
 
 private:

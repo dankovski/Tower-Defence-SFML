@@ -4,7 +4,7 @@
 #include "Scene.h"
 
 
-#define NUMBER_OF_BUTTONS 4
+#define NUMBER_OF_BUTTONS 3
 
 class MenuScene :public Scene {
 public:
@@ -17,7 +17,6 @@ public:
 	void render(sf::RenderWindow& mWindow);
 	int run(sf::RenderWindow& mWindow);
 	void mouseCheck(sf::RenderWindow& mWindow);
-	void recalculate(float mWidth, float mHeight);
 
 private:
 	sf::Vector2f gameSize;

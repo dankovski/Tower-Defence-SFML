@@ -5,14 +5,9 @@
 MenuScene::MenuScene(float mWidth, float mHeight) {
 	buttonsSize = mHeight/10;
 	gameSize = sf::Vector2f(mWidth, mHeight);
-	if (!font.loadFromFile("fonts/2.ttf"))
-	{
-		std::cout << "nie wczytalo fontow" << std::endl;
-	}
-	if (!menuTexture.loadFromFile("images/menu1.png"))
-	{
-		std::cout << "nie wczytalo textury MenuScene" << std::endl;
-	}
+
+	font.loadFromFile("fonts/2.ttf");
+	menuTexture.loadFromFile("images/menuBackground.png");
 
 	menuSprite.setTexture(menuTexture);
 	menuSprite.setPosition(sf::Vector2f(0, 0));
@@ -20,8 +15,7 @@ MenuScene::MenuScene(float mWidth, float mHeight) {
 
 	buttons[0] = new Button(&font, "Play", sf::Vector2f(mWidth / 2, mHeight / (NUMBER_OF_BUTTONS + 1) * 1), 1.5*buttonsSize, sf::Color::Red);
 	buttons[1] = new Button(&font, "Options", sf::Vector2f(mWidth / 2, mHeight / (NUMBER_OF_BUTTONS + 1) * 2), buttonsSize, sf::Color::White);
-	buttons[2] = new Button(&font, "Highscore", sf::Vector2f(mWidth / 2, mHeight / (NUMBER_OF_BUTTONS + 1) * 3), buttonsSize, sf::Color::White);
-	buttons[3] = new Button(&font, "Exit", sf::Vector2f(mWidth / 2, mHeight / (NUMBER_OF_BUTTONS + 1) * 4), buttonsSize, sf::Color::White);
+	buttons[2] = new Button(&font, "Exit", sf::Vector2f(mWidth / 2, mHeight / (NUMBER_OF_BUTTONS + 1) * 3), buttonsSize, sf::Color::White);
 
 	selectedItemIndex = 0;
 	running = false;
@@ -68,7 +62,6 @@ void MenuScene::MoveDown()
 
 void MenuScene::mouseCheck(sf::RenderWindow& mWindow) {
 
-
 	for (int i = 0; i < NUMBER_OF_BUTTONS; i++){
 		if (buttons[i]->isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y))){
 			selectedItemIndex = i;
@@ -105,30 +98,19 @@ int MenuScene::run(sf::RenderWindow& mWindow) {
 		while (mWindow.pollEvent(event)) {
 
 			if ((event.type == sf::Event::MouseButtonPressed && buttons[0]->isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x , gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left) || (selectedItemIndex == 0 && event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Return)) {
-
-				std::cout << "PLAY" << std::endl;
-				return 3;
-			}
-			else if ((event.type == sf::Event::MouseButtonPressed && buttons[1]->isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left) || (selectedItemIndex == 1 && event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Return)) {
-
-				std::cout << "OPCJE" << std::endl;
 				return 2;
 			}
-			else if ((event.type == sf::Event::MouseButtonPressed && buttons[2]->isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left) || (selectedItemIndex == 2 && event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Return)) {
-
-				std::cout << "HIGHSCORE" << std::endl;
+			else if ((event.type == sf::Event::MouseButtonPressed && buttons[1]->isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left) || (selectedItemIndex == 1 && event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Return)) {
 				return 1;
 			}
-			else if ((event.type == sf::Event::MouseButtonPressed && buttons[3]->isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left) || (selectedItemIndex == 3 && event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Return)) {
+			else if ((event.type == sf::Event::MouseButtonPressed && buttons[2]->isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left) || (selectedItemIndex == 2 && event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Return)) {
 				return -1;
 			}
 
 			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Up) {
-
 				MoveUp();
 			}
 			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Down) {
-
 				MoveDown();
 			}
 

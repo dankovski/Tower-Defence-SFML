@@ -2,15 +2,23 @@
 
 
 RocketTower::RocketTower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vector2f mPosition) :
-	Tower(mTurretTexture, mBulletTexture,  mPosition, getRange(), 30, 1.0) {
+	Tower(mTurretTexture, mBulletTexture,  mPosition, getInitRange(), getInitDamage(), getInitAttackSpeed(), getInitValue()) {
 }
-int RocketTower::getValue()
+int RocketTower::getInitValue()
 {
 	return 60;
 }
-int RocketTower::getRange()
+int RocketTower::getInitRange()
 {
 	return 250;
+}
+int RocketTower::getInitDamage()
+{
+	return 8;
+}
+float RocketTower::getInitAttackSpeed()
+{
+	return 3.0;
 }
 ;
 

@@ -9,9 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{de572c12-e4cf-4f55-9d43-88401a32b9b8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{816865a5-cea2-403d-9037-8792e051f308}</UniqueIdentifier>
     </Filter>
@@ -20,6 +17,9 @@
     </Filter>
     <Filter Include="Game\Projectiles">
       <UniqueIdentifier>{c267cc04-3dbc-4fd5-b6b8-ed49e6d1ae50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{de572c12-e4cf-4f55-9d43-88401a32b9b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,9 +42,6 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="GameScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="HighscoreScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="MenuScene.cpp">
@@ -86,6 +83,12 @@
     <ClCompile Include="Animator.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="SlowTower.cpp">
+      <Filter>Game\Towers</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperTower.cpp">
+      <Filter>Game\Towers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h">
@@ -110,9 +113,6 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="MenuScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="HighscoreScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="SettingsScene.h">
@@ -150,6 +150,12 @@
     </ClInclude>
     <ClInclude Include="Animator.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="SlowTower.h">
+      <Filter>Game\Towers</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperTower.h">
+      <Filter>Game\Towers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

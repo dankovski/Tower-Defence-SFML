@@ -13,6 +13,7 @@
 #include "GravesTower.h"
 #include "TripleTower.h"
 #include "StunTower.h"
+#include "SuperTower.h"
 #include <chrono>
 
 class GameScene :public Scene
@@ -43,6 +44,8 @@ private:
 	sf::Text goldText;
 	double timeFromFpsUpdate;
 	int level;
+	bool isAnyTowerSelected;
+	int selectedTurretIndex;
 
 	sf::Sprite gameMenuSprite;
 	sf::Text gameMenuText1;
@@ -50,6 +53,15 @@ private:
 	Button gameMenuButtonLeft;
 	Button gameMenuButtonRight;
 
+	sf::Text turretLevelText;
+	sf::Text turretDamageText;
+	sf::Text turretRangeText;
+	sf::Text turretAttackSpeedText;
+	sf::Text turretTimeText;
+	sf::Text turretPowerText;
+
+	Tower* selectedTowerPointer;
+	
 	std::vector<std::shared_ptr<Enemy>> enemies;
 	std::vector<std::shared_ptr<Tower>> towers;
 	std::vector<std::shared_ptr<sf::Texture>> turretsTexturesVector;
@@ -58,4 +70,6 @@ private:
 	std::vector<Stage> stages;
 	std::vector<Button> buttons;
 
+	Button sellButton;
+	Button upgradeButton;
 };

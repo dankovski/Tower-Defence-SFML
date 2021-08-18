@@ -2,8 +2,8 @@
 
 
 StunTower::StunTower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vector2f mPosition) :
-	Tower(mTurretTexture, mBulletTexture, mPosition, getRange(), 5, 0.5) {
-	stunTime = 1.0;
+	Tower(mTurretTexture, mBulletTexture, mPosition, getInitRange(), getInitDamage(), getInitAttackSpeed(), getInitValue()) {
+	stunTime = getInitStunTime();
 };
 
 void StunTower::checkBulletsCollision(Enemy* mEnemyPointer)
@@ -12,7 +12,7 @@ void StunTower::checkBulletsCollision(Enemy* mEnemyPointer)
 		if (bullets[i].isColliding(mEnemyPointer->getGlobalBounds())) {
 			bullets.erase(bullets.begin() + i);
 			mEnemyPointer->receiveDamage(damage);
-			mEnemyPointer->startStun(1.0);
+			mEnemyPointer->startStun(stunTime);
 			i--;
 		}
 
@@ -39,12 +39,44 @@ bool StunTower::hasEnemyInRange(std::shared_ptr<Enemy> mEnemy) {
 	return (sqrt(pow((xDistance - mEnemyGlobalBounds.width / 2.0), 2.0) + pow((yDistance - mEnemyGlobalBounds.height / 2.0), 2)) <= range.getRadius());
 }
 
-int StunTower::getValue()
+void StunTower::upgrade()
+{
+	level++;
+	range.setRadius(range.getRadius() + 10);
+	range.setOrigin(range.getGlobalBounds().width / 2, range.getGlobalBounds().height / 2);
+	attackSpeed += 0.05;
+	value += getUpgradeCost();
+	stunTime += 0.05;
+}
+
+
+
+int StunTower::getInitValue()
 {
 	return 80;
 }
 
-int StunTower::getRange()
+int StunTower::getInitRange()
 {
 	return 300;
+}
+
+int StunTower::getInitDamage()
+{
+	return 0;
+}
+
+float StunTower::getInitAttackSpeed()
+{
+	return 0.5;
+}
+
+float StunTower::getInitStunTime()
+{
+	return 1.0;
+}
+
+float StunTower::getStunTime()
+{
+	return stunTime;
 }

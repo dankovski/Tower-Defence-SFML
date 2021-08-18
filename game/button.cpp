@@ -2,6 +2,7 @@
 #include <iostream>
 
 Button::Button(sf::Font* buttonFont, std::string string, sf::Vector2f position, int characterSize, sf::Color color) {
+
 	text.setFont(*buttonFont);
 	text.setFillColor(color);
 	text.setString(string);
@@ -10,11 +11,11 @@ Button::Button(sf::Font* buttonFont, std::string string, sf::Vector2f position, 
 	text.setOutlineColor(sf::Color::Black);
 	text.setOrigin(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2);
 	text.setPosition(position);
+
 	rectangle.setSize(sf::Vector2f(text.getGlobalBounds().width, text.getGlobalBounds().height));
 	rectangle.setOrigin(sf::Vector2f(text.getGlobalBounds().width/2, text.getGlobalBounds().height/2));
 	rectangle.setPosition(sf::Vector2f(text.getGlobalBounds().left + text.getGlobalBounds().width / 2, text.getGlobalBounds().top + text.getGlobalBounds().height / 2));
 
-	//rectangle.setPosition(position);
 	collision = rectangle.getGlobalBounds();
 	haveSprite = false;
 	haveText = true;
@@ -90,9 +91,9 @@ void Button::setPosition(sf::Vector2f pos) {
 void Button::changeText(std::string mNewText)
 {
 	text.setString(mNewText);
-	text.setOrigin(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2);
+	text.setOrigin(text.getGlobalBounds().width / 2.0, text.getGlobalBounds().height / 2.0);
 	rectangle.setSize(sf::Vector2f(text.getGlobalBounds().width, text.getGlobalBounds().height));
-	rectangle.setOrigin(sf::Vector2f(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2));
+	rectangle.setOrigin(sf::Vector2f(text.getGlobalBounds().width / 2.0, text.getGlobalBounds().height / 2.0));
 	collision = rectangle.getGlobalBounds();
 }
 

@@ -37,7 +37,7 @@ ThreadLocal(value)
 template <typename T>
 T& ThreadLocalPtr<T>::operator *() const
 {
-    return *static_cast<T*>(getValue());
+    return *static_cast<T*>(getInitValue());
 }
 
 
@@ -45,7 +45,7 @@ T& ThreadLocalPtr<T>::operator *() const
 template <typename T>
 T* ThreadLocalPtr<T>::operator ->() const
 {
-    return static_cast<T*>(getValue());
+    return static_cast<T*>(getInitValue());
 }
 
 
@@ -53,7 +53,7 @@ T* ThreadLocalPtr<T>::operator ->() const
 template <typename T>
 ThreadLocalPtr<T>::operator T*() const
 {
-    return static_cast<T*>(getValue());
+    return static_cast<T*>(getInitValue());
 }
 
 
@@ -70,7 +70,7 @@ ThreadLocalPtr<T>& ThreadLocalPtr<T>::operator =(T* value)
 template <typename T>
 ThreadLocalPtr<T>& ThreadLocalPtr<T>::operator =(const ThreadLocalPtr<T>& right)
 {
-    setValue(right.getValue());
+    setValue(right.getInitValue());
     return *this;
 }
 

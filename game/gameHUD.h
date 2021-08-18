@@ -5,7 +5,9 @@
 #include "GravesTower.h"
 #include "RocketTower.h"
 #include "StunTower.h"
+#include "SlowTower.h"
 #include "TripleTower.h"
+#include "SuperTower.h"
 
 class GameHUD
 {

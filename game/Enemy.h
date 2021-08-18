@@ -19,8 +19,10 @@ private:
 	double timeFromLastStun;
 	double stunTime;
 	sf::RectangleShape hpBar;
-	bool isSlowed = false;
-
+	bool isEnemySlowed = false;
+	double timeFromLastSlow;
+	double slowTime;
+	float slowPower;
 	Animator walkAnimation;
 
 public:
@@ -33,7 +35,9 @@ public:
 	sf::FloatRect getGlobalBounds();
 	sf::Vector2f getPosition();
 	void startStun(double mStunTime);
+	void startSlow(double mSlowTime, float mSlowPower);
 	bool isStunned();
+	bool isSlowed();
 	int getRewardValue();
 	int getDamageValue();
 

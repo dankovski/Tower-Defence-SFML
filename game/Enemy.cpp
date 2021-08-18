@@ -55,18 +55,29 @@ void Enemy::render(double mDeltaTime) {
 			isEnemyStunned = false;
 		}
 	}
-	else if (isSlowed) {
-		spritePointer->move(sf::Vector2f(0.5*direction.x * mDeltaTime * speed, 0.5*direction.y * mDeltaTime * speed));
+	else if (isEnemySlowed) {
+		timeFromLastSlow += mDeltaTime;
+		if (timeFromLastSlow >= slowTime) {
+			isEnemySlowed = false;
+		}
+
+
+		walkAnimation.update(slowPower * mDeltaTime);
+		spritePointer->move(sf::Vector2f(slowPower *direction.x * mDeltaTime * speed, slowPower *direction.y * mDeltaTime * speed));
 		spritePointer->setColor(sf::Color::Green);
 	}
 	else {
+		walkAnimation.update(mDeltaTime);
 		spritePointer->move(sf::Vector2f(direction.x * mDeltaTime * speed, direction.y * mDeltaTime * speed));
 		spritePointer->setColor(sf::Color::White);
 	}
-	if (!isEnemyStunned) {
-		walkAnimation.update(mDeltaTime);
+
+	if (direction.x == -1) {
+		spritePointer->setScale(-1.0, 1.0);
+		spritePointer->setOrigin(sf::Vector2f(spritePointer->getGlobalBounds().width / 2, spritePointer->getGlobalBounds().height / 2));
 	}
 	
+
 }
 
 bool Enemy::isAttacking()
@@ -106,9 +117,22 @@ void Enemy::startStun(double mStunTime)
 	stunTime = mStunTime;
 }
 
+void Enemy::startSlow(double mSlowTime, float mSlowPower)
+{
+	isEnemySlowed = true;
+	timeFromLastSlow = 0.0;
+	slowTime = mSlowTime;
+	slowPower = mSlowPower;
+}
+
 bool Enemy::isStunned()
 {
 	return isEnemyStunned;
+}
+
+bool Enemy::isSlowed()
+{
+	return isEnemySlowed;
 }
 
 int Enemy::getRewardValue()

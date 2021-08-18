@@ -1,7 +1,7 @@
 #include "Tower.h"
 
 
-Tower::Tower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vector2f mPosition, int mRange, int mDamage, float mAttackSpeed) {
+Tower::Tower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vector2f mPosition, int mRange, int mDamage, float mAttackSpeed, int mValue) {
 	
 	range.setRadius(mRange);
 	range.setOutlineThickness(5);
@@ -10,14 +10,24 @@ Tower::Tower(sf::Texture* mTurretTexture, sf::Texture* mBulletTexture, sf::Vecto
 	range.setOrigin(range.getGlobalBounds().width / 2, range.getGlobalBounds().height / 2);
 	range.setPosition(mPosition);
 
+
+
 	sprite.setTexture(*mTurretTexture);
 	sprite.setOrigin(sprite.getGlobalBounds().width / 2, sprite.getGlobalBounds().height / 2);
 	sprite.setPosition(mPosition);
+
+	background.setSize(sf::Vector2f(sprite.getGlobalBounds().width, sprite.getGlobalBounds().height));
+	background.setOrigin(sprite.getGlobalBounds().width / 2, sprite.getGlobalBounds().height / 2);
+	background.setPosition(mPosition); 
+	background.setFillColor(sf::Color::Cyan);
+
 	hasTarget = false;
 	isTowerSelected = false;
 
+	value = mValue;
 	bulletTexture = mBulletTexture;
-
+	level = 1;
+	timeFromLastAttack = 1.0 / mAttackSpeed;
 	attackSpeed = mAttackSpeed;
 	damage = mDamage;
 
@@ -36,6 +46,17 @@ void Tower::drawRange(sf::RenderWindow& mWindow) {
 bool Tower::hasEnemyTarget()
 {
 	return hasTarget;
+}
+
+bool Tower::canUpgrade()
+{
+	if (level < 10) {
+		return true;
+	}
+	else {
+		return false;
+	}
+	
 }
 
 bool Tower::hasEnemyInRange(std::shared_ptr<Enemy> mEnemy){
@@ -81,14 +102,15 @@ void Tower::setTowerSelected(bool mIsSelected)
 void Tower::draw(sf::RenderWindow& mWindow)
 {
 
-	mWindow.draw(sprite);
 
 	if (isTowerSelected) {
-		mWindow.draw(range);
+		mWindow.draw(background);
 	}
 	for (int i = 0; i < bullets.size(); i++) {
 		bullets[i].draw(mWindow);
 	}
+
+	mWindow.draw(sprite);
 }
 
 void Tower::checkBulletsCollision(Enemy* mEnemyPointer)
@@ -102,6 +124,51 @@ void Tower::checkBulletsCollision(Enemy* mEnemyPointer)
 
 	}
 
+}
+
+void Tower::upgrade()
+{
+	level++;
+	range.setRadius(range.getRadius() + 10);
+	range.setOrigin(range.getGlobalBounds().width / 2, range.getGlobalBounds().height / 2);
+	damage += 2;
+	attackSpeed += 0.1;
+	value += getUpgradeCost();
+}
+
+int Tower::getUpgradeCost()
+{
+	return value/2;
+}
+
+int Tower::getLevel()
+{
+	return level;
+}
+
+int Tower::getDamage()
+{
+	return damage;
+}
+
+int Tower::getRange()
+{
+	return range.getRadius();
+}
+
+float Tower::getAttackSpeed()
+{
+	return attackSpeed;
+}
+
+int Tower::getValue()
+{
+	return value;
+}
+
+sf::Vector2f Tower::getPosition()
+{
+	return sprite.getPosition();
 }
 
 void Tower::render(double mDeltaTime) {
@@ -138,7 +205,6 @@ void Tower::render(double mDeltaTime) {
 
 void Tower::attack()
 {
-	//targetPointer->receiveDamage(damage);
 	bullets.push_back(Bullet(bulletTexture, sprite.getPosition(), targetPointer->getPosition(), 1500.0));
 }
 

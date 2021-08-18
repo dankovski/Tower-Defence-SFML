@@ -92,7 +92,7 @@ public:
     /// \return The current sensor value
     ///
     ////////////////////////////////////////////////////////////
-    static Vector3f getValue(Type sensor);
+    static Vector3f getInitValue(Type sensor);
 };
 
 } // namespace sf
@@ -144,7 +144,7 @@ public:
 /// sf::Sensor::setEnabled(sf::Sensor::Gravity, true);
 ///
 /// // get the current value of gravity
-/// sf::Vector3f gravity = sf::Sensor::getValue(sf::Sensor::Gravity);
+/// sf::Vector3f gravity = sf::Sensor::getInitValue(sf::Sensor::Gravity);
 /// \endcode
 ///
 ////////////////////////////////////////////////////////////

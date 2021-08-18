@@ -9,24 +9,10 @@ SettingsScene::SettingsScene(int mWidth, int mHeight, Settings* mSettings) {
 	running = false;
 	setChoices();
 
-	if (!font.loadFromFile("fonts/1.ttf"))
-	{
-		std::cout << "nie wczytalo fontow" << std::endl;
-	}
-
-	if (!texture.loadFromFile("images/menu2.jpg"))
-	{
-		std::cout << "nie wczytalo textury" << std::endl;
-	}
-
-	if (!arrowRight.loadFromFile("images/arrowRight.png"))
-	{
-		std::cout << "nie wczytalo textury" << std::endl;
-	}
-	if (!arrowLeft.loadFromFile("images/arrowLeft.png"))
-	{
-		std::cout << "nie wczytalo textury" << std::endl;
-	}
+	font.loadFromFile("fonts/1.ttf");
+	texture.loadFromFile("images/settingsBackground.jpg");
+	arrowRight.loadFromFile("images/arrowRight.png");
+	arrowLeft.loadFromFile("images/arrowLeft.png");
 
 	sprite.setTexture(texture);
 	sprite.setPosition(sf::Vector2f(0, 0));
@@ -151,17 +137,12 @@ SettingsScene::SettingsScene(int mWidth, int mHeight, Settings* mSettings) {
 
 
 	buttons.push_back(Button(&font, "BACK", sf::Vector2f(mWidth * 0.2, mHeight * 0.9), buttonsSize, sf::Color::White));
-
 	buttons.push_back(Button(&font, "SAVE", sf::Vector2f(mWidth * 0.6, mHeight * 0.9), buttonsSize, sf::Color::White));
-
 	buttons.push_back(Button(&font, "RESET", sf::Vector2f(mWidth * 0.8, mHeight * 0.9), buttonsSize, sf::Color::White));
-
-	
 
 }
 
-void SettingsScene::render(sf::RenderWindow& mWindow) {
-
+void SettingsScene::render(sf::Vector2f mMousePosition) {
 	texts[2].setString(std::to_string(res[resolutionChoice][0])+"x"+ std::to_string(res[resolutionChoice][1]));
 	if (fullscreen) {
 		texts[4].setString("YES");
@@ -179,19 +160,20 @@ void SettingsScene::render(sf::RenderWindow& mWindow) {
 
 	texts[10].setString(std::to_string(fpsLimits[fpsChoice]));
 
-	//if (buttonBack->isColliding(sf::Mouse::getPosition(mWindow))) {
+	for (int i = 0; i < buttons.size(); i++) {
+		if (buttons[i].isColliding(mMousePosition)) {
+			buttons[i].setTextColor(sf::Color::Red);
+			buttons[i].setTextSize(1.5 * buttonsSize);
+		}
+		else {
+			buttons[i].setTextColor(sf::Color::White);
+			buttons[i].setTextSize(buttonsSize);
+		}
+	}
 
-	//	buttonBack->setTextColor(sf::Color::Red);
-	//	buttonBack->setTextSize(1.5*buttonsSize);
 
-	//}
-	//else {
 
-	//	buttonBack->setTextColor(sf::Color::White);
-	//	buttonBack->setTextSize(buttonsSize);
-	//}
 }
-
 
 void SettingsScene::draw(sf::RenderWindow& mWindow) {
 
@@ -206,81 +188,80 @@ void SettingsScene::draw(sf::RenderWindow& mWindow) {
 	}
 }
 
-
 int SettingsScene::run(sf::RenderWindow& mWindow) {
 
-
+	sf::Vector2f mousePosition;
 	running = true;
 
 	sf::Event event;
 
 	while (running) {
+		mousePosition = sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y);
 
 		while (mWindow.pollEvent(event)) {
-
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[0].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			
+			if (event.type == sf::Event::MouseButtonPressed && buttons[0].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				resolutionChoice--;
 				if (resolutionChoice < 0) { resolutionChoice = 3; }
 
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[1].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[1].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				resolutionChoice++;
 				if (resolutionChoice > 3) { resolutionChoice = 0; }
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[2].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[2].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				if (fullscreen) { fullscreen = false; }
 				else { fullscreen = true; }
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[3].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[3].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				if (fullscreen) { fullscreen = false; }
 				else { fullscreen = true; }
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[4].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[4].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				if (vsync) { vsync = false; }
 				else { vsync = true; }
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[5].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[5].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				if (vsync) { vsync = false; }
 				else { vsync = true; }
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[6].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[6].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				antialiasingChoice--;
 				if (antialiasingChoice < 0) { antialiasingChoice = 4; }
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[7].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[7].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				antialiasingChoice++;
 				if (antialiasingChoice > 4) { antialiasingChoice = 0; }
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[8].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[8].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				fpsChoice--;
 				if (fpsChoice < 0) {
 					fpsChoice = 7;
 				}
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[9].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[9].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				fpsChoice++;
 				if (fpsChoice > 7) {
 					fpsChoice = 0;
 				}
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[10].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[10].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
+				setChoices();
 				return 0;
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[11].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[11].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				
 				if (fullscreen) {
 					if (settings->isFullscreen()) {
 						mWindow.create(sf::VideoMode(res[resolutionChoice][0], res[resolutionChoice][1]), "danko granko", sf::Style::Fullscreen);
 						mWindow.setView(sf::View(sf::FloatRect(0,0, 1200, 1000)));
-
 					}
 					else {
 						mWindow.create(sf::VideoMode(res[resolutionChoice][0], res[resolutionChoice][1]), "danko granko", sf::Style::Fullscreen);
 						mWindow.setView(sf::View(sf::FloatRect(0, 0, 1200, 1000)));
 					}
 				}
-
-				if (!fullscreen) {
+				else {
 					if (settings->isFullscreen()) {
 						mWindow.create(sf::VideoMode(res[resolutionChoice][0], res[resolutionChoice][1]), "danko granko", sf::Style::Close);
 						mWindow.setView(sf::View(sf::FloatRect(0, 0, 1200, 1000)));
@@ -290,29 +271,23 @@ int SettingsScene::run(sf::RenderWindow& mWindow) {
 						mWindow.setView(sf::View(sf::FloatRect(0,0, 1200, 1000)));
 					}
 					mWindow.setPosition(sf::Vector2i((sf::VideoMode::getDesktopMode().width-res[resolutionChoice][0])/2.0, (sf::VideoMode::getDesktopMode().height - res[resolutionChoice][1]) / 2.0));
-					std::cout << ((sf::VideoMode::getDesktopMode().width - res[resolutionChoice][0]) / 2.0) << "  " << ((sf::VideoMode::getDesktopMode().height - res[resolutionChoice][1]) / 2.0) << std::endl;
 				}
 
 				mWindow.setFramerateLimit(fpsLimits[fpsChoice]);
 				mWindow.setVerticalSyncEnabled(vsync);
-
 				settings->setSettings(res[resolutionChoice][0], res[resolutionChoice][1], fullscreen, vsync, antialiasingLevels[antialiasingChoice], fpsLimits[fpsChoice]);
 				settings->save();
 
-
 			}
-			if ((event.type == sf::Event::MouseButtonPressed && buttons[12].isColliding(sf::Vector2f(gameSize.x * sf::Mouse::getPosition(mWindow).x / mWindow.getSize().x, gameSize.y * sf::Mouse::getPosition(mWindow).y / mWindow.getSize().y)) && event.mouseButton.button == sf::Mouse::Left)) {
+			else if (event.type == sf::Event::MouseButtonPressed && buttons[12].isColliding(mousePosition) && event.mouseButton.button == sf::Mouse::Left) {
 				setChoices();
 			}
-
 		}
 
-
 		mWindow.clear();
-		render(mWindow);
+		render(mousePosition);
 		draw(mWindow);
 		mWindow.display();
-
 	}
 
 	running = false;

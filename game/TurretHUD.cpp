@@ -22,7 +22,7 @@ TurretHUD::TurretHUD(sf::Font* mFont, sf::Texture* mTurretTexture, sf::Texture* 
 	goldText.setFont(*mFont);
 	goldText.setString(std::to_string(goldValue));
 	goldText.setFillColor(sf::Color::Yellow);
-	goldText.setCharacterSize(mTurretSize.x * 0.25);
+	goldText.setCharacterSize(mTurretSize.x * 0.3);
 	goldText.setOutlineThickness(3);
 	goldText.setOutlineColor(sf::Color::Black);
 	goldText.setOrigin(goldText.getGlobalBounds().width / 2, goldText.getGlobalBounds().height / 2);
